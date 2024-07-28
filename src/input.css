@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-hover {
+    @apply lg:text-base sm:block min-[320px]:hidden bg-white px-3 py-2 rounded-lg border-solid border border-white hover:bg-slate-50 hover:border-slate-200;
+  }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./twconf.js"></script>
+    <script src="./scripts/script.js"></script>
+    <link href="./src/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+    <title>WeLovePacks</title>
+  </head>
+  <body class="antialiased mb-40 scroll-smooth">
+    <nav
+      class="sticky top-0 z-40 w-full backdrop-blur-xl flex-none transition-colors duration-100 lg:z-50 dark:border-white/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-white/75"
+    >
+      <div class="max-w-8xl mx-auto border-solid border-b border-white">
+        <div class="py-4 0 lg:px-8 mx-4 lg:mx-0">
+          <div
+            class="relative flex justify-between items-center lg:mx-16 sm:mx-8 phoneS:mx-4 transition-all ease-in-out duration-800"
+          >
+            <div>
+              <img src="./img/images/logo.png" alt="" class="lg:h-14 phoneS:h-12" />
+            </div>
+            <div class="flex items-center gap-8 font-display font-medium">
+              <p
+                class="lg:text-base sm:block phoneS:hidden bg-transparent px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer"
+                onclick="allItems()"
+              >
+                Produse
+              </p>
+              <p
+                class="lg:text-base sm:block phoneS:hidden bg-transparent px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer"
+                onclick="cheapItems()"
+              >
+                Contact
+              </p>
+              <div class="flex items-center relative">
+                <!-- <input
+                  class="lg:w-52 lg:py-2 lg:px-4 bg-slate-50 rounded-lg font-normal border-solid border border-gray-200 focus:border-solid focus:border-2 focus:border-gray-300"
+                  type="text"
+                  placeholder="Caută..."
+                />
+                <img
+                  class="w-6 h-6 absolute right-4"
+                  src="./img/icons/search.svg"
+                  alt=""
+                  />  -->
+                <img
+                  class="sm:hidden phoneS:block h-10 bg-slate-50 p-2 rounded-lg border-solid border border-slate-200"
+                  src="./img/icons/menu.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <pre class="md:mt-0 sm:-mt-12 phoneS:-mt-16"> 
+      <div class="flex relative justify-between lg:mx-16 sm:mx-8 phoneS:mx-2 phoneS:rounded-xl mt-4 sm:mt-1 sm:p-10 phoneS:p-5 rounded-3xl bg-gradient-to-t from-[#7CC487] to-[#D1E2D9] transition-all ease-in-out duration-300">
+        <div class="flex flex-col justify-between sm:max-w-[516px] phoneS:w-full">
+          <div class="flex flex-col justify-start sm:items-start phoneS:items-center">
+            <h1 class="font-display lg:text-5xl md:text-4xl phoneS:text-3xl  text-main-blue font-black uppercase">caserole, farfurii,<br><span class="tracking-wide">pahare, tacâmuri</span></h1>
+            <h3 class="mt-2 font-display lg:text-3xl md:text-2xl sm:text-xl phoneS:text-lg text-main-blue font-black">de unică folosință + <span class="bg-white px-3 rounded-3xl">alte produse</span></h3>
+            <p class="sm:max-w-full phoneL:max-w-96 mt-4 text-balance font-display font-medium md:text-lg phoneS:text-[14px] leading-snug text-xs phoneS:items-center sm:text-start phoneS:text-center"><span class="font-bold ">WeLovePacks</span> furnizează materiale de unică folosință la prețuri avantajoase pentru restaurante, catering, pensiuni, fast-food-uri ș.a. dar și persoanelor fizice.</p>
+          </div>
+          <div class="flex phoneM:flex-row phoneM:items-center phoneS:items-start sm:gap-10 phoneS:gap-4 mb-16 mt-8">
+            <button class="w-full h-12 bg-transparent border-solid border-[3px] border-main-blue rounded-xl px-5 py-2 font-display font-bold lg:text-lg tracking-wide">Despre noi</button>
+            <button class="w-full h-12 bg-main-blue border-none rounded-xl px-5 py-2 font-display font-bold lg:text-lg text-white tracking-wide">Cumpără</button>
+          </div>
+        </div>
+        <div class="sm:flex items-center justify-center relative w-80 h-80 mr-8 phoneS:hidden">
+          <img class="absolute " src="./img/images/presentation-img.png" alt="">
+        </div>
+       
+        <div class="flex items-center justify-center w-full absolute bottom-0 left-0 rounded-b-3xl phoneS:rounded-b-xl bg-main-blue py-3 px-3">
+          <p class="font-context tracking-wide font-normal align-middle text-center text-white lg:text-lg md:text-base sm:text-sm phoneS:text-xs phoneS:text-wrap leading-relaxed">Pentru comenzi mai mari de 500 RON, serviciul de curierat este GRATUIT.</p>
+        </div>
+      </div>
+    </pre>
+
+    <div class="d-products lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-300">
+      <div class="flex justify-between mb-2">
+        <div>
+          <p class="uppercase font-black font-display text-3xl tracking-wide">PRODUSE</p>
+        </div>
+        <div class="flex justify-between items-center gap-3">
+          <div class="flex justify-between items-center p-1 gap-1 bg-slate-200/70 rounded-lg">
+            <button id="list" class="rounded-md" onclick="listItems()">
+              <img class="min-w-8 h-8 p-1" src="img/icons/list.svg" alt="" />
+            </button>
+
+            <img class="top-1 h-4 w-1" src="img/icons/dot.svg" alt="" />
+            <button id="grid" class="rounded-md" onclick="gridItems()">
+              <img class="min-w-8 h-8 p-1" src="img/icons/grid.svg" alt="" />
+            </button>
+          </div>
+          <div class="flex items-center gap-1 h-10">
+            <div>
+              <p class="font-display font-bold py-2 px-4 bg-slate-200/70 rounded-s-lg">10</p>
+            </div>
+            <div class="flex items-center h-10 py-1 px-1 bg-slate-200/70 rounded-r-lg">
+              <img class="h-5 font-display font-bold" src="img/icons/chevron-down.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="font-display font-medium text-end text-sm text-gray-500">*toate prețurile includ TVA</div>
+      <div
+        class="products-list min-h-96 grid lg:grid-cols-2 md:grid-cols-1 gap-4 phoneL:grid-cols-1 font-display"
+      ></div>
+      <div
+        class="products-grid min-h-96 grid lg:grid-cols-4 md:grid-cols-1 gap-4 phoneL:grid-cols-1 font-display"
+      ></div>
+    </div>
+
+    <!--------------- de adaugat la sfarsit 
+    <div class="mx-0">
+      <div class="md:-inset-0 p-0 py-0">
+        <div class="md:-start-0 my-0">
+          <div class="sm:-end-0 mr-0 mx-0">
+            <div class="lg:decoration-0 block">
+              <div class="mx-0 min-w-0">
+                <div class="mx-0">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> --------------->
+  </body>
+</html>
