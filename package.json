@@ -1,0 +1,19 @@
+{
+  "name": "1",
+  "version": "1.0.0",
+  "main": "postcss.config.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
