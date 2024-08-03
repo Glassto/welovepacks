@@ -303,7 +303,7 @@
         </div>
       </div>
 
-      <div class="mt-12 mx-3 flex md:flex-row phoneS:flex-col items-center justify-between lg:gap-14 phoneS:gap-1">
+      <div class="mt-12 mx-3 flex md:flex-row phoneS:flex-col items-center justify-between lg:gap-14 md:gap-6 phoneS:gap-1">
         <div class="min-w-100">
           <div class="flex justify-center">
             <img class="md:h-80 phoneS:h-64" src="img/images/contact-illustration.svg" alt="" />
@@ -317,46 +317,57 @@
             </p>
           </div>
         </div>
-        <form class="space-y-4">
+        <form id="form" class="space-y-4" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="62d4a179-5762-4ad2-bdd2-79b45d0fb8a4" />
+          <input type="hidden" name="from_name" value="WeLovePacks" />
           <div class="flex items-center gap-4">
             <input
-              class="font-display font-medium sm:text-base phoneS:text-sm capitalize py-3 px-6 w-full border-solid border-2 border-gray-400 focus:border-[#333C3D] focus:outline-gray-700 rounded-lg"
+              required
+              class="font-display font-medium sm:text-base phoneS:text-sm py-3 px-6 w-full border-solid border-2 border-gray-400 focus:border-[#333C3D] focus:outline-gray-700 rounded-lg"
               type="text"
-              name=""
+              name="First Name"
               id=""
               placeholder="Nume..."
             />
             <input
-              class="font-display font-medium sm:text-base phoneS:text-sm capitalize py-3 px-6 w-full border-solid border-2 border-gray-400 focus:border-[#333C3D] focus:outline-gray-700 rounded-lg"
+              required
+              class="font-display font-medium sm:text-base phoneS:text-sm py-3 px-6 w-full border-solid border-2 border-gray-400 focus:border-[#333C3D] focus:outline-gray-700 rounded-lg"
               type="text"
-              name=""
+              name="Last Name"
               id=""
               placeholder="Prenume..."
             />
           </div>
+
           <input
-            class="font-display font-medium sm:text-base phoneS:text-sm py-3 px-6 w-full border-solid border-2 border-gray-400 focus:border-[#333C3D] focus:outline-gray-700 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:outline-pink-500 focus:invalid:border-pink-500 rounded-lg"
+            class="font-display font-medium sm:text-base phoneS:text-sm py-3 px-6 w-full border-solid border-2 border-gray-400 focus:border-[#333C3D] focus:outline-gray-600 invalid:border-pink-600 invalid:text-pink-700 focus:invalid:outline-pink-600 focus:invalid:border-pink-600 rounded-lg"
             type="email"
-            name=""
+            name="email"
             id=""
             placeholder="Email..."
           />
           <input
+            required
             class="font-display font-medium sm:text-base phoneS:text-sm py-3 px-6 my-3 w-full border-solid border-2 border-gray-400 focus:border-[#333C3D] focus:outline-gray-700 rounded-lg"
             type="text"
-            name=""
+            name="subject"
             id=""
             placeholder="Subiect..."
           />
           <textarea
+            required
             class="font-display resize-none sm:text-base phoneS:text-sm font-medium py-3 px-6 h-44 w-full border-solid border-2 border-gray-400 focus:border-[#333C3D] focus:outline-gray-700 rounded-lg"
             type="text"
-            name=""
+            name="message"
             id=""
             placeholder="Scrie..."
-            name=""
-            id=""
           ></textarea>
+          <div class="flex justify-end">
+            <button class="flex items-center bg-sky-500 py-3 px-6 rounded-lg gap-3 cursor-pointer" type="submit">
+              <p class="font-display font-extrabold sm:text-base phoneS:text-sm text-white tracking-wider">Trimite</p>
+              <img class="sm:h-5 phoneS:h-[18px]" src="img/icons/send.svg" alt="" />
+            </button>
+          </div>
         </form>
       </div>
     </div>

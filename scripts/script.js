@@ -117,6 +117,8 @@ function gridItems() {
 }
 }
 
-
+window.onload = function() {
+        document.getElementById("form").reset();
+    };
 
 
