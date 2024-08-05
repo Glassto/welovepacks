@@ -5,6 +5,22 @@ function dropdownMenu() {
   document.getElementById("selectInMenu").classList.toggle("hidden");
 }
 
+
+function useBorderOnScroll() {
+    let navbar = document.getElementById("nav");
+    let pre = document.getElementById("pre")
+    let preTopCoord = pre.getBoundingClientRect().top
+    if (window.scrollY <= preTopCoord + 10) {
+        navbar.classList.remove('border-b');
+    } else {
+        navbar.classList.add('border-b');
+    }
+}
+
+window.addEventListener('scroll', useBorderOnScroll);
+
+useBorderOnScroll();
+
 function scrollToDiv(object) {
   var target = document.getElementById(object);
   var offset = 114;
@@ -19,7 +35,6 @@ function scrollToDiv(object) {
   });
 }
 
-
 let isOpened = false;
 function sideMenu() {
   
@@ -27,7 +42,7 @@ function sideMenu() {
   let toggleImage = document.getElementById("sideMenuImageToggle");
 
   toggleButton.classList.toggle("hidden");
-  document.getElementById("sideMenu").classList.toggle("w-60");
+  document.getElementById("sideMenu").classList.toggle("w-56");
   document.getElementById("overlay").classList.toggle("hidden");
 
   if (isOpened === false) {

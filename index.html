@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./twconf.js"></script>
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/script.js" defer></script>
     <link href="./src/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,30 +20,30 @@
   </head>
   <body id="body" class="antialiased scroll-smooth">
     <nav class="sticky top-0 z-40 w-full flex-none transition-colors duration-1000 lg:z-50 dark:border-white/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-white">
-      <div class="max-w-8xl mx-auto border-solid border-b border-slate-200">
+      <div id="nav" class="max-w-8xl mx-auto border-solid border-b border-slate-200">
         <div class="py-4 0 lg:px-8 mx-4 lg:mx-0">
           <div class="relative flex justify-between items-center lg:mx-16 sm:mx-8 phoneS:mx-4 transition-all ease-in-out duration-800">
             <div>
               <img src="./img/images/logo-black.png" alt="" class="lg:h-14 phoneS:h-12" />
             </div>
-            <div class="flex items-center justify-end gap-8 font-display font-medium">
+            <div class="flex items-center content-end lg:gap-6 md:gap-2 phoneS:gap-0 font-display font-medium overflow-auto">
               <div
                 class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer"
-                onclick="scrollToDiv(`productsDiv`)"
+                onclick="scrollToDiv('productsDiv')"
               >
-                <img src="img/icons/products.svg" alt="" />
-                <p id="navProductsButton" class="text-base sm:block phoneS:hidden font-semibold text-gray-600 bg-transparent">Produse</p>
+                <img class="md:h-6 sm:h-5" src="img/icons/products.svg" alt="" />
+                <p class="md:text-base sm:text-sm font-semibold text-gray-600 bg-transparent">Produse</p>
               </div>
-              <div class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer" onclick="scrollToDiv(`contactDiv`)">
-                <img src="img/icons/contact.svg" alt="" />
-                <p class="text-base font-semibold text-gray-600 bg-transparent">Contact</p>
+              <div class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer" onclick="scrollToDiv('contactDiv')">
+                <img class="md:h-6 sm:h-5" src="img/icons/contact.svg" alt="" />
+                <p class="md:text-base sm:text-sm font-semibold text-gray-600 bg-transparent">Contact</p>
               </div>
               <div
                 class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer"
                 onclick="scrollToDiv('deliveryDiv')"
               >
-                <img src="img/icons/delivery.svg" alt="" />
-                <p class="text-base font-semibold text-gray-600 bg-transparent">Condiții de livrare</p>
+                <img class="md:h-6 sm:h-5" src="img/icons/delivery.svg" alt="" />
+                <p class="md:text-base sm:text-sm font-semibold text-gray-600 bg-transparent">Livrare</p>
               </div>
 
               <div class="flex items-center relative">
@@ -73,25 +73,25 @@
     <div id="overlay" class="hidden fixed top-[81px] right-0 w-full h-full backdrop-blur-sm dark:bg-main-blue/20 z-[18] transition-all"></div>
     <div id="sideMenu" class="h-full hidden w-0 fixed top-20 z-20 right-0 px-2 pl-2 bg-white border-solid border-l border-slate-200 overflow-x-hidden transition-all">
       <div class="flex flex-col py-3 gap-2">
-        <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv(`productsDiv`)">
+        <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv('productsDiv')">
           <img src="img/icons/products.svg" alt="" />
           <p class="font-display font-semibold text-base text-gray-600">Produse</p>
         </div>
-        <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv(`contactDiv`)">
+        <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv('contactDiv')">
           <img src="img/icons/contact.svg" alt="" />
           <p class="font-display font-semibold text-base text-gray-600">Contact</p>
         </div>
         <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv('deliveryDiv')">
           <img src="img/icons/delivery.svg" alt="" />
-          <p class="font-display font-semibold text-base text-gray-600">Condiții de livrare</p>
+          <p class="font-display font-semibold text-base text-gray-600">Livrare</p>
         </div>
       </div>
     </div>
 
     <p class="hidden" id="_activeListStyle">List</p>
 
-    <pre class="md:mt-0 sm:-mt-12 phoneS:-mt-16"> 
-      <div class="flex relative justify-between lg:mx-16 sm:mx-8 phoneS:mx-2 phoneS:rounded-xl mt-4 sm:mt-1 sm:p-10 phoneS:p-5 rounded-3xl bg-gradient-to-t from-[#7CC487] to-[#D1E2D9] transition-all ease-in-out duration-300">
+    <pre id="pre" class="md:-mt-4 sm:-mt-8 phoneS:-mt-10"> 
+      <div class="flex relative justify-between lg:mx-16 sm:mx-8 phoneS:mx-2 phoneS:rounded-xl sm:p-10 phoneS:p-5 rounded-3xl bg-gradient-to-t from-[#7CC487] to-[#D1E2D9] transition-all ease-in-out duration-400">
         <div class="flex flex-col justify-between sm:max-w-[516px] phoneS:w-full">
           <div class="flex flex-col justify-start sm:items-start phoneS:items-center">
             <h1 class="font-display lg:text-5xl md:text-4xl phoneS:text-3xl  text-main-blue font-black uppercase">caserole, farfurii,<br><span class="tracking-wide">pahare, tacâmuri</span></h1>
@@ -99,7 +99,7 @@
             <p class="sm:max-w-full phoneL:max-w-96 mt-4 text-balance font-display font-medium md:text-lg phoneS:text-[14px] leading-snug text-xs phoneS:items-center sm:text-start phoneS:text-center"><span class="font-bold ">WeLovePacks</span> furnizează materiale de unică folosință la prețuri avantajoase pentru restaurante, catering, pensiuni, fast-food-uri ș.a. dar și persoanelor fizice.</p>
           </div>
           <div class="flex phoneM:flex-row phoneM:items-center phoneS:items-start sm:gap-10 phoneS:gap-4 mb-16 mt-8">
-            <button class="w-full h-12 bg-transparent border-solid border-[3px] border-main-blue rounded-xl px-5 py-2 font-display font-bold lg:text-lg tracking-wide ring-1 ring-transparent hover:ring-main-blue">Despre noi</button>
+            <button class="w-full h-12 bg-transparent border-solid border-[3px] border-main-blue rounded-xl px-5 py-2 font-display font-bold lg:text-lg tracking-wide ring-1 ring-transparent hover:ring-main-blue" onclick="scrollToDiv('aboutDiv')">Despre noi</button>
             <button class="w-full h-12 bg-main-blue border-none rounded-xl px-5 py-2 font-display font-bold lg:text-lg text-white tracking-wide ring-1 ring-transparent hover:ring-main-blue">Cumpără</button>
           </div>
         </div>
@@ -113,7 +113,7 @@
       </div>
     </pre>
 
-    <div id="productsDiv" class="d-product lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-300">
+    <div id="productsDiv" class="d-product lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-400">
       <div class="flex justify-between mb-4">
         <div>
           <p class="uppercase font-display font-black sm:text-3xl phoneS:text-2xl tracking-wide">PRODUSE</p>
@@ -174,7 +174,7 @@
     </div> --------------->
 
     <about id="aboutDiv">
-      <div class="mt-10 lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-300">
+      <div class="mt-10 lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-400">
         <div>
           <p class="uppercase font-display font-black sm:text-3xl phoneS:text-2xl tracking-wide mb-4">DESPRE NOI</p>
         </div>
@@ -203,17 +203,17 @@
         </div>
       </div>
       <div>
-        <div class="mt-6 lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-300">
+        <div class="mt-6 lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-400">
           <div class="w-full bg-main-blue flex items-center gap-4 py-2 px-6 rounded-t-3xl rounded-b-sm">
             <img class="sm:h-6 phoneS:h-5" src="img/icons/our-values.svg" alt="" />
             <p class="uppercase font-display font-extrabold sm:text-lg phoneS:text-base text-white tracking-wide">VALORILE COMPANIEI</p>
           </div>
         </div>
 
-        <div class="mr-10 transition-all ease-in-out duration-300">
+        <div class="mr-10 transition-all ease-in-out duration-400">
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#1C2627] rounded-r-md">
-              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300">
+              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-400">
                 INOVAȚIA:
               </p>
             </div>
@@ -225,7 +225,7 @@
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#333C3D] rounded-r-lg">
-              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300">
+              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-400">
                 CALITATEA:
               </p>
             </div>
@@ -237,7 +237,7 @@
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#495152] rounded-r-lg">
-              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300">
+              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-400">
                 FIABILITATEA:
               </p>
             </div>
@@ -249,7 +249,7 @@
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#606768] rounded-r-lg">
-              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300">
+              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-400">
                 ACCESIBILITATEA:
               </p>
             </div>
@@ -261,7 +261,7 @@
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#777D7D] rounded-r-lg">
-              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300">
+              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-400">
                 SUSTENABILITATEA:
               </p>
             </div>
@@ -274,7 +274,7 @@
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#8E9393] rounded-r-lg">
               <p
-                class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle text-nowrap transition-all ease-in-out duration-300"
+                class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle text-nowrap transition-all ease-in-out duration-400"
               >
                 ORIENTAREA CĂTRE CLIENT:
               </p>
@@ -289,7 +289,7 @@
       </div>
     </about>
 
-    <div id="contactDiv" class="mt-10 lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-300">
+    <div id="contactDiv" class="mt-10 lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-400">
       <div>
         <p class="uppercase font-display font-black sm:text-3xl phoneS:text-2xl tracking-wide mb-4">CONTACT</p>
       </div>
@@ -389,7 +389,7 @@
       </div>
     </div>
 
-    <div id="deliveryDiv" class="mt-10 lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-300">
+    <div id="deliveryDiv" class="mt-10 lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-400">
       <div>
         <p class="uppercase font-display font-black sm:text-3xl phoneS:text-2xl tracking-wide mb-4">CONDIȚII DE LIVRARE</p>
       </div>
@@ -412,7 +412,7 @@
     </div>
 
     <footer class="bg-main-blue mt-20">
-      <div class="lg:mx-16 sm:mx-8 phoneS:mx-2 pt-4 transition-all ease-in-out duration-300">
+      <div class="lg:mx-16 sm:mx-8 phoneS:mx-2 pt-4 transition-all ease-in-out duration-400">
         <div class="flex items-start justify-between">
           <div class="flex items-start sm:gap-10 phoneS:gap-6 mb-8">
             <div>
