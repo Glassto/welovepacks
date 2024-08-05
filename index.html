@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,27 +18,34 @@
       }
     </style>
   </head>
-  <body class="antialiased mb-40 scroll-smooth">
-    <nav class="sticky top-0 z-40 w-full backdrop-blur-xl flex-none transition-colors duration-100 lg:z-50 dark:border-white/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-white/75">
-      <div class="max-w-8xl mx-auto border-solid border-b border-white">
+  <body id="body" class="antialiased">
+    <nav class="sticky top-0 z-40 w-full flex-none transition-colors duration-1000 lg:z-50 dark:border-white/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-white">
+      <div class="max-w-8xl mx-auto border-solid border-b border-slate-200">
         <div class="py-4 0 lg:px-8 mx-4 lg:mx-0">
           <div class="relative flex justify-between items-center lg:mx-16 sm:mx-8 phoneS:mx-4 transition-all ease-in-out duration-800">
             <div>
-              <img src="./img/images/logo.png" alt="" class="lg:h-14 phoneS:h-12" />
+              <img src="./img/images/logo-black.png" alt="" class="lg:h-14 phoneS:h-12" />
             </div>
-            <div class="flex items-center gap-8 font-display font-medium">
-              <p
-                class="lg:text-base sm:block phoneS:hidden bg-transparent px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer"
-                onclick="allItems()"
+            <div class="flex items-center justify-end gap-8 font-display font-medium">
+              <div
+                class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer"
+                onclick="scrollToDiv(`productsDiv`)"
               >
-                Produse
-              </p>
-              <p
-                class="lg:text-base sm:block phoneS:hidden bg-transparent px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer"
-                onclick="cheapItems()"
+                <img src="img/icons/products.svg" alt="" />
+                <p id="navProductsButton" class="text-base sm:block phoneS:hidden font-semibold text-gray-600 bg-transparent">Produse</p>
+              </div>
+              <div class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer" onclick="scrollToDiv(`contactDiv`)">
+                <img src="img/icons/contact.svg" alt="" />
+                <p class="text-base font-semibold text-gray-600 bg-transparent">Contact</p>
+              </div>
+              <div
+                class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer"
+                onclick="scrollToDiv(`deliveryDiv`)"
               >
-                Contact
-              </p>
+                <img src="img/icons/delivery.svg" alt="" />
+                <p class="text-base font-semibold text-gray-600 bg-transparent">Condiții de livrare</p>
+              </div>
+
               <div class="flex items-center relative">
                 <!-- <input
                   class="lg:w-52 lg:py-2 lg:px-4 bg-slate-50 rounded-lg font-normal border-solid border border-gray-200 focus:border-solid focus:border-2 focus:border-gray-300"
@@ -50,13 +57,37 @@
                   src="./img/icons/search.svg"
                   alt=""
                   />  -->
-                <img class="sm:hidden phoneS:block h-10 bg-slate-50 p-2 rounded-lg border-solid border border-slate-200" src="./img/icons/menu.svg" alt="" />
+                <button class="sm:hidden phoneS:block bg-slate-50 rounded-lg border-solid border border-slate-200" onclick="sideMenu()">
+                  <img id="sideMenuImageToggle" class="h-10 p-2" src="./img/icons/menu.svg" alt="" />
+                  <!-- <div id="selectInMenu" class="selectInMenu hidden absolute sm:min-w-[82px] phoneS:min-w-[75.5px] right-0 overflow-auto z-10 mt-2 rounded-lg border-solid border border-slate-200"> 
+                    <div class="font-display font-medium sm:text-base phoneS:text-base py-3 px-10 bg-slate-50 hover:bg-slate-200 cursor-pointer">Produse</div>
+                    <div class="font-display font-medium sm:text-base phoneS:text-base py-3 px-10 bg-slate-50 hover:bg-slate-200 cursor-pointer">Contact</div>
+                  </div> -->
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
+    <div id="overlay" class="hidden fixed top-[81px] right-0 w-full h-full backdrop-blur-sm dark:bg-main-blue/20 z-[18] transition-all"></div>
+    <div id="sideMenu" class="h-full hidden w-0 fixed top-20 z-20 right-0 px-2 pl-2 bg-white border-solid border-l border-slate-200 overflow-x-hidden transition-all">
+      <div class="flex flex-col py-3 gap-2">
+        <div class="flex items-center gap-2 pl-3 py-3 rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv(`productsDiv`)">
+          <img src="img/icons/products.svg" alt="" />
+          <a class="font-display font-semibold text-base text-gray-600" href="">Produse</a>
+        </div>
+        <div class="flex items-center gap-2 pl-3 py-3 rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv(`contactDiv`)">
+          <img src="img/icons/contact.svg" alt="" />
+          <a class="font-display font-semibold text-base text-gray-600" href="">Contact</a>
+        </div>
+        <div class="flex items-center gap-2 pl-3 py-3 rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv(`deliveryDiv`)">
+          <img src="img/icons/delivery.svg" alt="" />
+          <a class="font-display font-semibold text-base text-gray-600" href="">Condiții de livrare</a>
+        </div>
+      </div>
+    </div>
+
     <p class="hidden" id="_activeListStyle">List</p>
 
     <pre class="md:mt-0 sm:-mt-12 phoneS:-mt-16"> 
@@ -68,8 +99,8 @@
             <p class="sm:max-w-full phoneL:max-w-96 mt-4 text-balance font-display font-medium md:text-lg phoneS:text-[14px] leading-snug text-xs phoneS:items-center sm:text-start phoneS:text-center"><span class="font-bold ">WeLovePacks</span> furnizează materiale de unică folosință la prețuri avantajoase pentru restaurante, catering, pensiuni, fast-food-uri ș.a. dar și persoanelor fizice.</p>
           </div>
           <div class="flex phoneM:flex-row phoneM:items-center phoneS:items-start sm:gap-10 phoneS:gap-4 mb-16 mt-8">
-            <button class="w-full h-12 bg-transparent border-solid border-[3px] border-main-blue rounded-xl px-5 py-2 font-display font-bold lg:text-lg tracking-wide">Despre noi</button>
-            <button class="w-full h-12 bg-main-blue border-none rounded-xl px-5 py-2 font-display font-bold lg:text-lg text-white tracking-wide">Cumpără</button>
+            <button class="w-full h-12 bg-transparent border-solid border-[3px] border-main-blue rounded-xl px-5 py-2 font-display font-bold lg:text-lg tracking-wide ring-1 ring-transparent hover:ring-main-blue">Despre noi</button>
+            <button class="w-full h-12 bg-main-blue border-none rounded-xl px-5 py-2 font-display font-bold lg:text-lg text-white tracking-wide ring-1 ring-transparent hover:ring-main-blue">Cumpără</button>
           </div>
         </div>
         <div class="sm:flex items-center justify-center relative w-80 h-80 mr-8 phoneS:hidden">
@@ -82,7 +113,7 @@
       </div>
     </pre>
 
-    <div class="d-products lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-300">
+    <div id="productsDiv" class="d-product lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-300">
       <div class="flex justify-between mb-4">
         <div>
           <p class="uppercase font-display font-black sm:text-3xl phoneS:text-2xl tracking-wide">PRODUSE</p>
@@ -100,21 +131,18 @@
           </div>
           <div class="flex items-center gap-1 sm:h-10 phoneS:h-9">
             <div>
-              <p class="number-product font-display font-bold sm:text-base phoneS:text-sm py-2 px-4 bg-slate-200/70 hover:bg-slate-200 rounded-s-lg cursor-pointer" onclick="dropdown()">10</p>
+              <p class="number-product font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-slate-200/70 hover:bg-slate-200 rounded-s-lg cursor-pointer" onclick="dropdownProducts()">10</p>
             </div>
-            <div id="dropdowns" class="flex items-center sm:h-10 phoneS:h-9 py-1 px-1 bg-slate-200/70 hover:bg-slate-200 rounded-r-lg" onclick="dropdown()">
+            <div id="dropdowns" class="flex items-center sm:h-10 phoneS:h-9 py-1 px-1 bg-slate-200/70 hover:bg-slate-200 rounded-r-lg" onclick="dropdownProducts()">
               <img class="sm:h-5 phoneS:h-4 font-display font-bold" src="img/icons/chevron-down.svg" alt="" />
               <div class="dropdown relative inline-block">
                 <div id="selectDisplayNumber" class="selectDisplayNumber hidden absolute sm:min-w-[82px] phoneS:min-w-[75.5px] top-5 -right-1 overflow-auto z-10">
-                  <div
-                    class="font-display font-bold sm:text-base phoneS:text-sm py-2 px-4 mt-1 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-t-lg cursor-pointer"
-                    onclick="displayProducts(10)"
-                  >
+                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 mt-1 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-t-lg cursor-pointer" onclick="displayProducts(10)">
                     10
                   </div>
-                  <div class="font-display font-bold sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(20)">20</div>
-                  <div class="font-display font-bold sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(20)">20</div>
-                  <div class="font-display font-bold sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-b-lg cursor-pointer" onclick="displayProducts(24)">
+                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(20)">20</div>
+                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(20)">20</div>
+                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-b-lg cursor-pointer" onclick="displayProducts(24)">
                     Toate
                   </div>
                 </div>
@@ -145,7 +173,7 @@
       </div>
     </div> --------------->
 
-    <about>
+    <about id="aboutDiv">
       <div class="mt-10 lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-300">
         <div>
           <p class="uppercase font-display font-black sm:text-3xl phoneS:text-2xl tracking-wide mb-4">DESPRE NOI</p>
@@ -156,10 +184,10 @@
               <img class="sm:h-6 phoneS:h-5" src="img/icons/our-journey.svg" alt="" />
               <p class="uppercase font-display font-extrabold sm:text-lg phoneS:text-base text-white tracking-wide">MISIUNEA NOASTRĂ</p>
             </div>
-            <p class="py-3 px-5 font-display font-normal sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed text-pretty">
-              <span class="font-semibold">We Love Packs</span>, se dedică furnizării de materiale de unică folosință de înaltă calitate, la prețuri avantajoase, pentru a sprijini restaurantele,
-              serviciile de catering, pensiunile, fast-food-urile și persoanele fizice în desfășurarea activităților lor zilnice. Scopul nostru este să simplificăm accesul la produse esențiale,
-              asigurându-ne că fiecare client primește exact ceea ce are nevoie pentru a-și desfășura activitatea în condiții optime și eficiente.
+            <p class="py-3 px-5 font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed text-pretty">
+              <span class="font-semibold">We Love Packs</span>, se dedică furnizării de materiale de unică folosință de înaltă calitate, la prețuri avantajoase, pentru a sprijini restaurantele, serviciile de catering,
+              pensiunile, fast-food-urile și persoanele fizice în desfășurarea activităților lor zilnice. Scopul nostru este să simplificăm accesul la produse esențiale, asigurându-ne că fiecare client primește exact
+              ceea ce are nevoie pentru a-și desfășura activitatea în condiții optime și eficiente.
             </p>
           </div>
           <div class="w-full md:mb-3 phoneS:mb-7">
@@ -167,9 +195,9 @@
               <img class="sm:h-6 phoneS:h-5" src="img/icons/our-vision.svg" alt="" />
               <p class="uppercase font-display font-extrabold sm:text-lg phoneS:text-base text-white tracking-wide">VIZIUNEA NOASTRĂ</p>
             </div>
-            <p class="py-3 px-5 font-display font-normal sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed text-pretty">
-              Ne propunem să devenim cei mai buni în furnizarea de materiale de unică folosință, recunoscuți pentru calitatea produselor noastre, excelența serviciilor și angajamentul nostru față de
-              sustenabilitate. Ne dorim să creăm parteneriate durabile cu clienții noștri, contribuind activ la succesul și creșterea afacerilor lor.
+            <p class="py-3 px-5 font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed text-pretty">
+              Ne propunem să devenim cei mai buni în furnizarea de materiale de unică folosință, recunoscuți pentru calitatea produselor noastre, excelența serviciilor și angajamentul nostru față de sustenabilitate. Ne
+              dorim să creăm parteneriate durabile cu clienții noștri, contribuind activ la succesul și creșterea afacerilor lor.
             </p>
           </div>
         </div>
@@ -182,73 +210,63 @@
           </div>
         </div>
 
-        <div class="mr-10">
+        <div class="mr-10 transition-all ease-in-out duration-300">
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#1C2627] rounded-r-md">
-              <p
-                class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300"
-              >
+              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300">
                 INOVAȚIA:
               </p>
             </div>
             <div>
-              <p class="font-display font-normal sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
+              <p class="font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
                 Ne străduim să inovăm constant, pentru a aduce pe piață produse noi și îmbunătățite, care să răspundă nevoilor în continuă schimbare ale clienților noștri.
               </p>
             </div>
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#333C3D] rounded-r-lg">
-              <p
-                class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300"
-              >
+              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300">
                 CALITATEA:
               </p>
             </div>
             <div>
-              <p class="font-display font-normal sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
+              <p class="font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
                 Ne angajăm să furnizăm produse de cea mai înaltă calitate, care să îndeplinească și să depășească așteptările clienților noștri.
               </p>
             </div>
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#495152] rounded-r-lg">
-              <p
-                class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300"
-              >
+              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300">
                 FIABILITATEA:
               </p>
             </div>
             <div>
-              <p class="font-display font-normal sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
+              <p class="font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
                 Suntem un partener de încredere, dedicat să livrăm produsele la timp și în condiții perfecte, de fiecare dată.
               </p>
             </div>
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#606768] rounded-r-lg">
-              <p
-                class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300"
-              >
+              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300">
                 ACCESIBILITATEA:
               </p>
             </div>
             <div>
-              <p class="font-display font-normal sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
+              <p class="font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
                 Credem în oferirea unor soluții economice, care să fie accesibile tuturor clienților noștri, indiferent de mărimea afacerii lor.
               </p>
             </div>
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#777D7D] rounded-r-lg">
-              <p
-                class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300"
-              >
+              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-300">
                 SUSTENABILITATEA:
               </p>
             </div>
             <div>
-              <p class="font-display font-normal sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
+              <p class="font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
                 Ne asumăm responsabilitatea de a proteja mediul înconjurător prin promovarea și oferirea de produse prietenoase cu mediul.
               </p>
             </div>
@@ -262,7 +280,7 @@
               </p>
             </div>
             <div>
-              <p class="font-display font-normal sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
+              <p class="font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
                 Ascultăm și înțelegem nevoile clienților noștri, personalizând soluțiile pentru a le satisface cerințele specifice.
               </p>
             </div>
@@ -271,7 +289,7 @@
       </div>
     </about>
 
-    <div class="mt-10 lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-300">
+    <div id="contactDiv" class="mt-10 lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-300">
       <div>
         <p class="uppercase font-display font-black sm:text-3xl phoneS:text-2xl tracking-wide mb-4">CONTACT</p>
       </div>
@@ -279,7 +297,7 @@
         <div class="flex items-center w-full min-h-14 gap-3">
           <img class="sm:h-14 phoneS:h-12 p-4 bg-[#333C3D] rounded-lg" src="img/icons/phone.svg" alt="" />
           <a
-            class="flex items-center w-full font-display font-bold text-main-blue sm:text-lg phoneS:text-base py-4 px-5 sm:h-14 phoneS:h-12 bg-[rgba(234,238,244,255)] rounded-lg border border-solid border-slate-200"
+            class="flex items-center w-full font-display font-bold text-main-blue sm:text-lg phoneS:text-base py-4 px-5 sm:h-14 phoneS:h-12 bg-[rgba(234,238,244,255)] rounded-lg border border-solid border-slate-200 hover:border-slate-300"
             href="tel:0756 430 008"
             >0756 430 008</a
           >
@@ -287,7 +305,7 @@
         <div class="flex items-center w-full min-h-14 gap-3">
           <img class="sm:h-14 phoneS:h-12 p-4 bg-[#333C3D] rounded-lg" src="img/icons/facebook.svg" alt="" />
           <a
-            class="flex items-center w-full font-display font-bold text-main-blue sm:text-lg phoneS:text-base py-4 px-5 sm:h-14 phoneS:h-12 bg-[rgba(234,238,244,255)] rounded-lg border border-solid border-slate-200"
+            class="flex items-center w-full font-display font-bold text-main-blue sm:text-lg phoneS:text-base py-4 px-5 sm:h-14 phoneS:h-12 bg-[rgba(234,238,244,255)] rounded-lg border border-solid border-slate-200 hover:border-slate-300"
             href="https://www.facebook.com/people/We-love-packs/100088191474601"
             target="_blank"
             >@welovepacks</a
@@ -296,7 +314,7 @@
         <div class="flex items-center w-full min-h-14 gap-3">
           <img class="sm:h-14 phoneS:h-12 p-4 bg-[#333C3D] rounded-lg" src="img/icons/email.svg" alt="" />
           <a
-            class="flex items-center w-full font-display font-bold text-main-blue sm:text-lg phoneS:text-base py-4 px-5 sm:h-14 phoneS:h-12 bg-[rgba(234,238,244,255)] rounded-lg border border-solid border-slate-200"
+            class="flex items-center w-full font-display font-bold text-main-blue sm:text-lg phoneS:text-base py-4 px-5 sm:h-14 phoneS:h-12 bg-[rgba(234,238,244,255)] rounded-lg border border-solid border-slate-200 hover:border-slate-300"
             href="mailto:welovepacks24@gmail.com"
             >welovepacks24@gmail.com</a
           >
@@ -309,9 +327,8 @@
             <img class="md:h-80 phoneS:h-64" src="img/images/contact-illustration.svg" alt="" />
           </div>
           <div class="mb-5">
-            <p class="font-display font-normal text-gray-600 sm:text-sm phoneS:text-xs mt-5 md:mx-0 phoneS:mx-7 max-w-[600px]">
-              Vă rugăm să completați toate câmpurile și să furnizați cât mai multe detalii relevante în mesajul dumneavoastră, pentru a ne permite să vă oferim un răspuns prompt și specific nevoilor
-              dumneavoastră. <br />
+            <p class="font-display font-normal text-gray-600/80 sm:text-sm phoneS:text-[13px] mt-5 md:mx-0 phoneS:mx-7 max-w-[600px]">
+              Vă rugăm să completați toate câmpurile și să furnizați cât mai multe detalii relevante în mesajul dumneavoastră, pentru a ne permite să vă oferim un răspuns prompt și specific nevoilor dumneavoastră. <br />
               <br />
               Vă mulțumim pentru interesul acordat și așteptăm cu nerăbdare să vă răspundem!
             </p>
@@ -363,7 +380,7 @@
             placeholder="Scrie..."
           ></textarea>
           <div class="flex justify-end">
-            <button class="flex items-center bg-sky-500 py-3 px-6 rounded-lg gap-3 cursor-pointer" type="submit">
+            <button class="flex items-center bg-sky-500 border-solid border border-blue-500/60 hover:ring-1 hover:ring-sky-500 py-3 px-6 rounded-lg gap-3 cursor-pointer" type="submit">
               <p class="font-display font-extrabold sm:text-base phoneS:text-sm text-white tracking-wider">Trimite</p>
               <img class="sm:h-5 phoneS:h-[18px]" src="img/icons/send.svg" alt="" />
             </button>
@@ -371,5 +388,56 @@
         </form>
       </div>
     </div>
+
+    <div id="deliveryDiv" class="mt-10 lg:mx-16 sm:mx-8 phoneS:mx-2 transition-all ease-in-out duration-300">
+      <div>
+        <p class="uppercase font-display font-black sm:text-3xl phoneS:text-2xl tracking-wide mb-4">CONDIȚII DE LIVRARE</p>
+      </div>
+      <div class="mx-3">
+        <ul
+          class="sm:flex items-start sm:gap-16 phoneS:gap-8 marker:text-slate-700 list-disc pl-5 sm:space-y-0 phoneS:space-y-3 list-outside font-display font-normal sm:text-base phoneS:text-sm text-main-blue bg-slate-50 border border-slate-200 rounded-lg py-4"
+        >
+          <div class="ml-4 space-y-3 basis-1/2 text-pretty mr-2 leading-normal">
+            <li>Pentru comenzi mai mari de 500 RON, serviciul de curierat este GRATUIT.</li>
+            <li>Pentru comenzi mai mari de 500 RON, vă livrăm produsele comandate în MAXIM 24H în limita a 50 de km de la adresa depozitului nostru.</li>
+            <li>Prețurile pot suferi modificări datorită fluctuației costului de achiziție și transport.</li>
+          </div>
+          <div class="ml-4 space-y-3 basis-1/2 text-pretty mr-2 leading-normal">
+            <li>Ne puteți solicita și alte produse ce nu se găsesc în catalogul nostru.</li>
+            <li>Onorarea comenzilor se face în limita stocului disponibil.</li>
+            <li>Fotografiile au caracter informativ. Dimensiunile, capacitatea și ambalarea produselor pot fi diferite față de ofertă</li>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="bg-main-blue mt-20">
+      <div class="lg:mx-16 sm:mx-8 phoneS:mx-2 pt-4 transition-all ease-in-out duration-300">
+        <div class="flex items-start justify-between">
+          <div class="flex items-start sm:gap-10 phoneS:gap-6 mb-8">
+            <div>
+              <img class="lg:h-14 phoneS:h-12" src="img/images/logo-white.png" alt="" />
+            </div>
+            <div class="flex flex-col font-display font-light tracking-wide sm:text-sm phoneS:text-xs text-white/80">
+              <h3 class="font-medium sm:text-base phoneS:text-sm text-white">Contact</h3>
+              <a href="tel:0756 430 008">Telefon</a>
+              <a href="mailto:welovepacks24@gmail.com">Email</a>
+            </div>
+            <div class="font-display font-light tracking-wide sm:text-sm phoneS:text-xs text-white/80">
+              <h3 class="font-medium sm:text-base phoneS:text-sm text-white">Produse</h3>
+            </div>
+          </div>
+          <div>
+            <a href="https://www.facebook.com/people/We-love-packs/100088191474601" target="_blank" alt="">
+              <img class="sm:h-8 phoneS:h-7" src="img/icons/facebook-blue.svg" alt="" />
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="min-h-[0.5px] w-full rounded-3xl bg-slate-50/40"></div>
+          <p class="font-display font-extralight tracking-wide sm:text-xs phoneS:text-[10px] text-center text-white/50 py-2">©2024 We Love Packs, Toate drepturile rezervate</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

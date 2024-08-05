@@ -1,5 +1,47 @@
-function dropdown() {
+function dropdownProducts() {
   document.getElementById("selectDisplayNumber").classList.toggle("hidden");
+}
+function dropdownMenu() {
+  document.getElementById("selectInMenu").classList.toggle("hidden");
+}
+
+function scrollToDiv(object) {
+  var target = document.getElementById(object);
+  var offset = 114;
+
+  // Poziția elementului
+  var elementPosition = target.getBoundingClientRect().top;
+  var offsetPosition = elementPosition + window.scrollY - offset;
+
+  // Scroll la poziția div-ului
+  window.scrollTo({
+      top: offsetPosition
+  });
+}
+
+
+let isOpened = false;
+function sideMenu() {
+  
+  let toggleButton = document.getElementById("sideMenu");
+  let toggleImage = document.getElementById("sideMenuImageToggle");
+
+  toggleButton.classList.toggle("hidden");
+  document.getElementById("sideMenu").classList.toggle("w-60");
+  document.getElementById("overlay").classList.toggle("hidden");
+
+  if (isOpened === false) {
+    toggleImage.src="../img/icons/close.svg";
+    isOpened = true;
+  } else {
+    toggleImage.src="../img/icons/menu.svg";
+    isOpened = false;
+  }
+}
+
+function closeSideMenu() {
+  document.getElementById("sideMenu").classList.add("hidden");
+  document.getElementById("overlay").classList.add("hidden");
 }
 
 function displayProducts(maxProductsToDisplay) {
