@@ -18,7 +18,7 @@
       }
     </style>
   </head>
-  <body id="body" class="antialiased">
+  <body id="body" class="antialiased scroll-smooth">
     <nav class="sticky top-0 z-40 w-full flex-none transition-colors duration-1000 lg:z-50 dark:border-white/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-white">
       <div class="max-w-8xl mx-auto border-solid border-b border-slate-200">
         <div class="py-4 0 lg:px-8 mx-4 lg:mx-0">
@@ -40,7 +40,7 @@
               </div>
               <div
                 class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer"
-                onclick="scrollToDiv(`deliveryDiv`)"
+                onclick="scrollToDiv('deliveryDiv')"
               >
                 <img src="img/icons/delivery.svg" alt="" />
                 <p class="text-base font-semibold text-gray-600 bg-transparent">Condiții de livrare</p>
@@ -73,17 +73,17 @@
     <div id="overlay" class="hidden fixed top-[81px] right-0 w-full h-full backdrop-blur-sm dark:bg-main-blue/20 z-[18] transition-all"></div>
     <div id="sideMenu" class="h-full hidden w-0 fixed top-20 z-20 right-0 px-2 pl-2 bg-white border-solid border-l border-slate-200 overflow-x-hidden transition-all">
       <div class="flex flex-col py-3 gap-2">
-        <div class="flex items-center gap-2 pl-3 py-3 rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv(`productsDiv`)">
+        <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv(`productsDiv`)">
           <img src="img/icons/products.svg" alt="" />
-          <a class="font-display font-semibold text-base text-gray-600" href="">Produse</a>
+          <p class="font-display font-semibold text-base text-gray-600">Produse</p>
         </div>
-        <div class="flex items-center gap-2 pl-3 py-3 rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv(`contactDiv`)">
+        <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv(`contactDiv`)">
           <img src="img/icons/contact.svg" alt="" />
-          <a class="font-display font-semibold text-base text-gray-600" href="">Contact</a>
+          <p class="font-display font-semibold text-base text-gray-600">Contact</p>
         </div>
-        <div class="flex items-center gap-2 pl-3 py-3 rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv(`deliveryDiv`)">
+        <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv('deliveryDiv')">
           <img src="img/icons/delivery.svg" alt="" />
-          <a class="font-display font-semibold text-base text-gray-600" href="">Condiții de livrare</a>
+          <p class="font-display font-semibold text-base text-gray-600">Condiții de livrare</p>
         </div>
       </div>
     </div>
