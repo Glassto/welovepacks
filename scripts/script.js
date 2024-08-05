@@ -39,10 +39,6 @@ function sideMenu() {
   }
 }
 
-function closeSideMenu() {
-  document.getElementById("sideMenu").classList.add("hidden");
-  document.getElementById("overlay").classList.add("hidden");
-}
 
 function displayProducts(maxProductsToDisplay) {
   let _activeListStyle = document.getElementById("_activeListStyle") || 'List';
