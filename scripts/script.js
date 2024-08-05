@@ -46,10 +46,10 @@ function sideMenu() {
   document.getElementById("overlay").classList.toggle("hidden");
 
   if (isOpened === false) {
-    toggleImage.src="../img/icons/close.svg";
+    toggleImage.src="./img/icons/close.svg";
     isOpened = true;
   } else {
-    toggleImage.src="../img/icons/menu.svg";
+    toggleImage.src="./img/icons/menu.svg";
     isOpened = false;
   }
 }
