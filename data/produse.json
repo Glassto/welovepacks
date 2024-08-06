@@ -1,6 +1,7 @@
 [
   {
     "image": "img/images/products/sacosa-hartie-cu-maner.png",
+    "category": "Alte Produse",
     "title": "Sacoșă hârtie cu mâner",
     "specification1": "Dimensiune: 28/29/17 cm",
     "specification2": "",
@@ -9,6 +10,7 @@
   },
   {
     "image": "img/images/products/manusi-negre-nitril.png",
+    "category": "Alte Produse",
     "title": "Mănuși negre nitril",
     "specification1": "Dimensiune: M",
     "specification2": "",
@@ -17,6 +19,7 @@
   },
   {
     "image": "img/images/products/pungi-alimentare.png",
+    "category": "Alte Produse",
     "title": "Pungi alimentare",
     "specification1": "Capacitate: 2kg",
     "specification2": "1 rolă = 350 buc",
@@ -25,6 +28,7 @@
   },
   {
     "image": "img/images/products/saci-menajeri-negri.png",
+    "category": "Alte Produse",
     "title": "Saci menajeri negri",
     "specification1": "Volum: 240L",
     "specification2": "1 rolă = 10 buc",
@@ -33,6 +37,7 @@
   },
   {
     "image": "img/images/products/saci-menajeri-galbeni-HDPE.png",
+    "category": "Alte Produse",
     "title": "Saci menajeri galbeni HDPE",
     "specification1": "Volum: 60L",
     "specification2": "1 rolă = 20 buc",
@@ -41,6 +46,7 @@
   },
   {
     "image": "img/images/products/servetele-albe-33cm.png",
+    "category": "Alte Produse",
     "title": "Șervețele albe",
     "specification1": "Dimensiune: 33/33 cm",
     "specification2": "Grosime: 1 strat",
@@ -49,6 +55,7 @@
   },
   {
     "image": "img/images/products/servetele-albe-25cm.png",
+    "category": "Alte Produse",
     "title": "Șervețele albe",
     "specification1": "Dimensiune: 25/25 cm",
     "specification2": "Grosime: 1 strat",
@@ -57,6 +64,7 @@
   },
   {
     "image": "img/images/products/paie-negre-flexibile-ambalate-individual.png",
+    "category": "Alte Produse",
     "title": "Paie negre flexibile din PP ambalate individual",
     "specification1": "",
     "specification2": "",
@@ -65,6 +73,7 @@
   },
   {
     "image": "img/images/products/scobitori-lemn-ambalate-individual.png",
+    "category": "Alte Produse",
     "title": "Scobitori din lemn ambalate individual",
     "specification1": "",
     "specification2": "",
@@ -73,6 +82,7 @@
   },
   {
     "image": "img/images/products/bete-frigarui.png",
+    "category": "Alte Produse",
     "title": "Bețe pentru frigărui",
     "specification1": "",
     "specification2": "",
@@ -81,14 +91,16 @@
   },
   {
     "image": "img/images/products/sosiera-capac-atasat.png",
+    "category": "Alte Produse",
     "title": "Sosieră PET cu capac atașat",
-    "specification1": "",
+    "specification1": "Capacitate: 80cc",
     "specification2": "",
     "price": "10",
     "per": "100 buc"
   },
   {
     "image": "img/images/products/cutie-pizza-kraft.png",
+    "category": "Cutii Pizza",
     "title": "Cutie pizza kraft",
     "specification1": "Dimensiune: 40/40 cm",
     "specification2": "",
@@ -97,6 +109,7 @@
   },
   {
     "image": "img/images/products/cutie-pizza-kraft.png",
+    "category": "Cutii Pizza",
     "title": "Cutie pizza kraft",
     "specification1": "Dimensiune: 32/32 cm",
     "specification2": "",
@@ -105,6 +118,7 @@
   },
   {
     "image": "img/images/products/cutie-pizza-kraft.png",
+    "category": "Cutii Pizza",
     "title": "Cutie pizza kraft",
     "specification1": "Dimensiune: 28/28 cm",
     "specification2": "",
@@ -113,6 +127,7 @@
   },
   {
     "image": "img/images/products/cutie-pizza-alba.png",
+    "category": "Cutii Pizza",
     "title": "Cutie pizza albă",
     "specification1": "Dimensiune: 25/25 cm",
     "specification2": "",
@@ -121,6 +136,7 @@
   },
   {
     "image": "img/images/products/hartie-de-copt.png",
+    "category": "Folii/Hârtii Alimentare",
     "title": "Hârtie de copt",
     "specification1": "Dimensiune: 37/50 cm",
     "specification2": "",
@@ -129,6 +145,7 @@
   },
   {
     "image": "img/images/products/folie-alimentara-45cm.png",
+    "category": "Folii/Hârtii Alimentare",
     "title": "Folie alimentară",
     "specification1": "Dimensiune: 45 cm",
     "specification2": "Greutate: 984 gr",
@@ -137,6 +154,7 @@
   },
   {
     "image": "img/images/products/folie-alimentara-30cm.png",
+    "category": "Folii/Hârtii Alimentare",
     "title": "Folie alimentară",
     "specification1": "Dimensiune: 30 cm",
     "specification2": "Greutate: 640 gr",
@@ -145,6 +163,7 @@
   },
   {
     "image": "img/images/products/folie-aluminiu-45cm.png",
+    "category": "Folii/Hârtii Alimentare",
     "title": "Folie aluminiu",
     "specification1": "Dimensiune: 45 cm",
     "specification2": "Greutate: 900 gr",
@@ -153,6 +172,7 @@
   },
   {
     "image": "img/images/products/folie-aluminiu-30cm.png",
+    "category": "Folii/Hârtii Alimentare",
     "title": "Folie aluminiu",
     "specification1": "Dimensiune: 30 cm",
     "specification2": "Greutate: 700 gr",
@@ -161,6 +181,7 @@
   },
   {
     "image": "img/images/products/capace-bombate-frappe.png",
+    "category": "Pahare",
     "title": "Capace bombate frappe cu orificiu pentru pai",
     "specification1": "",
     "specification2": "",
@@ -169,6 +190,7 @@
   },
   {
     "image": "img/images/products/pahare-carton.png",
+    "category": "Pahare",
     "title": "Pahare carton",
     "specification1": "Volum: 118 ml",
     "specification2": "",
@@ -177,6 +199,7 @@
   },
   {
     "image": "img/images/products/set-lingure-servetel.png",
+    "category": "Tacâmuri",
     "title": "Set: lingură + furculiță + cuțit transparente PP + șervețel",
     "specification1": "",
     "specification2": "",
@@ -185,6 +208,7 @@
   },
   {
     "image": "img/images/products/set-lingura-servetel.png",
+    "category": "Tacâmuri",
     "title": "Set: lingură PP + șervețel",
     "specification1": "",
     "specification2": "",
