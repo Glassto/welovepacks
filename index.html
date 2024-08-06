@@ -32,18 +32,18 @@
                 onclick="scrollToDiv('productsDiv')"
               >
                 <img class="md:h-6 sm:h-5" src="img/icons/products.svg" alt="" />
-                <p class="md:text-base sm:text-sm font-semibold text-gray-600 bg-transparent">Produse</p>
+                <p class="md:text-base sm:text-sm font-semibold text-gray-700 bg-transparent">Produse</p>
               </div>
               <div class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer" onclick="scrollToDiv('contactDiv')">
                 <img class="md:h-6 sm:h-5" src="img/icons/contact.svg" alt="" />
-                <p class="md:text-base sm:text-sm font-semibold text-gray-600 bg-transparent">Contact</p>
+                <p class="md:text-base sm:text-sm font-semibold text-gray-700 bg-transparent">Contact</p>
               </div>
               <div
                 class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer"
                 onclick="scrollToDiv('deliveryDiv')"
               >
                 <img class="md:h-6 sm:h-5" src="img/icons/delivery.svg" alt="" />
-                <p class="md:text-base sm:text-sm font-semibold text-gray-600 bg-transparent">Livrare</p>
+                <p class="md:text-base sm:text-sm font-semibold text-gray-700 bg-transparent">Livrare</p>
               </div>
 
               <div class="flex items-center relative">
@@ -75,15 +75,15 @@
       <div class="flex flex-col py-3 gap-2">
         <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv('productsDiv')">
           <img src="img/icons/products.svg" alt="" />
-          <p class="font-display font-semibold text-base text-gray-600">Produse</p>
+          <p class="font-display font-semibold text-base text-gray-700">Produse</p>
         </div>
         <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv('contactDiv')">
           <img src="img/icons/contact.svg" alt="" />
-          <p class="font-display font-semibold text-base text-gray-600">Contact</p>
+          <p class="font-display font-semibold text-base text-gray-700">Contact</p>
         </div>
         <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv('deliveryDiv')">
           <img src="img/icons/delivery.svg" alt="" />
-          <p class="font-display font-semibold text-base text-gray-600">Livrare</p>
+          <p class="font-display font-semibold text-base text-gray-700">Livrare</p>
         </div>
       </div>
     </div>
@@ -98,15 +98,15 @@
             <h3 class="mt-2 font-display lg:text-3xl md:text-2xl sm:text-xl phoneS:text-lg text-main-blue font-black">de unică folosință + <span class="bg-white px-3 rounded-3xl">alte produse</span></h3>
             <p class="sm:max-w-full phoneL:max-w-96 mt-4 text-balance font-display font-medium md:text-lg phoneS:text-[14px] leading-snug text-xs phoneS:items-center sm:text-start phoneS:text-center"><span class="font-bold ">WeLovePacks</span> furnizează materiale de unică folosință la prețuri avantajoase pentru restaurante, catering, pensiuni, fast-food-uri ș.a. dar și persoanelor fizice.</p>
           </div>
-          <div class="flex phoneM:flex-row phoneM:items-center phoneS:items-start sm:gap-10 phoneS:gap-4 mb-16 mt-8">
+          <div class="flex phoneL:flex-row phoneL:items-center phoneS:flex-col phoneS:items-center sm:gap-10 phoneS:gap-4 mb-16 mt-8">
             <button class="flex items-center justify-center gap-3 w-full h-12 bg-transparent border-solid border-[3px] border-main-blue rounded-xl px-5 py-2 lg:text-lg tracking-wide ring-1 ring-transparent hover:ring-main-blue" onclick="scrollToDiv('aboutDiv')">
               <img src="img/icons/about.svg" alt="">
-              <p class="font-display font-bold">Despre noi</p>
+              <p class="font-display font-bold ">Despre noi</p>
             </button>
-            <button class="flex items-center justify-center gap-3 w-full h-12 bg-main-blue border-none rounded-xl px-5 py-2 font-display font-bold lg:text-lg text-white tracking-wide ring-1 ring-transparent hover:ring-main-blue">
+            <a class="flex items-center justify-center gap-3 w-full h-12 bg-main-blue border-none rounded-xl px-5 py-2 font-display font-bold lg:text-lg text-white tracking-wide ring-1 ring-transparent hover:ring-main-blue" href="products.html">
               <img src="img/icons/choose.svg" alt="">
               <p class="font-display font-bold">Alege produse</p>
-            </button>
+            </a>
           </div>
         </div>
         <div class="sm:flex items-center justify-center relative w-80 h-80 mr-8 phoneS:hidden">
@@ -137,17 +137,17 @@
           </div>
           <div class="flex items-center gap-1 sm:h-10 phoneS:h-9">
             <div>
-              <p class="number-product font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-slate-200/70 hover:bg-slate-200 rounded-s-lg cursor-pointer" onclick="dropdownProducts()">10</p>
+              <p class="number-product font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-slate-200/70 hover:bg-slate-200 rounded-s-lg cursor-pointer" onclick="dropdownProducts()">8</p>
             </div>
             <div id="dropdowns" class="flex items-center sm:h-10 phoneS:h-9 py-1 px-1 bg-slate-200/70 hover:bg-slate-200 rounded-r-lg" onclick="dropdownProducts()">
               <img class="sm:h-5 phoneS:h-4 font-display font-bold" src="img/icons/chevron-down.svg" alt="" />
               <div class="dropdown relative inline-block">
                 <div id="selectDisplayNumber" class="selectDisplayNumber hidden absolute sm:min-w-[82px] phoneS:min-w-[75.5px] top-5 -right-1 overflow-auto z-10">
-                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 mt-1 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-t-lg cursor-pointer" onclick="displayProducts(10)">
-                    10
+                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 mt-1 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-t-lg cursor-pointer" onclick="displayProducts(8)">
+                    8
                   </div>
-                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(20)">20</div>
-                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(20)">20</div>
+                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(16)">16</div>
+                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(24)">24</div>
                   <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-b-lg cursor-pointer" onclick="displayProducts(24)">
                     Toate
                   </div>
@@ -320,7 +320,7 @@
         <div class="flex items-center w-full min-h-14 gap-3">
           <img class="sm:h-14 phoneS:h-12 p-4 bg-[#333C3D] rounded-lg" src="img/icons/email.svg" alt="" />
           <a
-            class="flex items-center w-full font-display font-bold text-main-blue sm:text-lg phoneS:text-base py-4 px-5 sm:h-14 phoneS:h-12 bg-[rgba(234,238,244,255)] rounded-lg border border-solid border-slate-200 hover:border-slate-300"
+            class="flex items-center w-full font-display font-bold text-main-blue sm:text-lg phoneS:text-base phoneM:py-4 phoneS:pl-4 phoneS:pr-0 px-5 sm:h-14 phoneS:h-12 bg-[rgba(234,238,244,255)] rounded-lg border border-solid border-slate-200 hover:border-slate-300"
             href="mailto:welovepacks24@gmail.com"
             >welovepacks24@gmail.com</a
           >
@@ -422,7 +422,7 @@
         <div class="flex items-start justify-between">
           <div class="flex items-start sm:gap-10 phoneS:gap-6 mb-8">
             <div>
-              <img class="lg:h-14 phoneS:h-12" src="img/images/logo-white.png" alt="" />
+              <img class="lg:h-14 phoneS:h-12 phoneM:block phoneS:hidden" src="img/images/logo-white.png" alt="" />
             </div>
             <div class="flex flex-col font-display font-light tracking-wide sm:text-sm phoneS:text-xs text-white/80">
               <h3 class="font-medium sm:text-base phoneS:text-sm text-white">Contact</h3>

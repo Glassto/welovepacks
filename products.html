@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./twconf.js"></script>
+    <script src="./scripts/products.js" defer></script>
+    <link href="./src/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+    <title>WeLovePacks</title>
+  </head>
+  <body>
+    <nav class="sticky top-0 z-40 w-full flex-none transition-colors duration-1000 lg:z-50 dark:border-white/[0.06] bg-white supports-backdrop-blur:bg-white/95 dark:bg-white">
+      <div id="nav" class="max-w-8xl mx-auto border-solid border-b border-slate-200">
+        <div class="py-4 0 lg:px-8 mx-4 lg:mx-0">
+          <div class="relative flex justify-between items-center lg:mx-16 sm:mx-8 phoneS:mx-4 transition-all ease-in-out duration-800">
+            <div>
+              <a href="index.html">
+                <img src="./img/images/logo-black.png" alt="" class="lg:h-14 phoneS:h-12" />
+              </a>
+            </div>
+            <div class="flex items-center content-end lg:gap-6 md:gap-2 phoneS:gap-0 font-display font-medium overflow-auto">
+              <div class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer" onclick="scrollToDiv('productsDiv')">
+                <img class="md:h-6 sm:h-5" src="img/icons/products.svg" alt="" />
+                <p class="md:text-base sm:text-sm font-semibold text-gray-700 bg-transparent">Produse</p>
+              </div>
+              <div class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer" onclick="scrollToDiv('contactDiv')">
+                <img class="md:h-6 sm:h-5" src="img/icons/contact.svg" alt="" />
+                <p class="md:text-base sm:text-sm font-semibold text-gray-700 bg-transparent">Contact</p>
+              </div>
+              <div class="sm:flex phoneS:hidden items-center gap-2 px-3 py-2 rounded-lg border-solid border border-transparent hover:bg-slate-50 hover:border-slate-200 cursor-pointer" onclick="scrollToDiv('deliveryDiv')">
+                <img class="md:h-6 sm:h-5" src="img/icons/delivery.svg" alt="" />
+                <p class="md:text-base sm:text-sm font-semibold text-gray-700 bg-transparent">Livrare</p>
+              </div>
+
+              <div class="flex items-center relative">
+                <!-- <input
+                  class="lg:w-52 lg:py-2 lg:px-4 bg-slate-50 rounded-lg font-normal border-solid border border-gray-200 focus:border-solid focus:border-2 focus:border-gray-300"
+                  type="text"
+                  placeholder="Caută..."
+                />
+                <img
+                  class="w-6 h-6 absolute right-4"
+                  src="./img/icons/search.svg"
+                  alt=""
+                  />  -->
+                <button class="sm:hidden phoneS:block bg-slate-50 rounded-lg border-solid border border-slate-200" onclick="sideMenu()">
+                  <img id="sideMenuImageToggle" class="h-10 p-2" src="./img/icons/menu.svg" alt="" />
+                  <!-- <div id="selectInMenu" class="selectInMenu hidden absolute sm:min-w-[82px] phoneS:min-w-[75.5px] right-0 overflow-auto z-10 mt-2 rounded-lg border-solid border border-slate-200"> 
+                    <div class="font-display font-medium sm:text-base phoneS:text-base py-3 px-10 bg-slate-50 hover:bg-slate-200 cursor-pointer">Produse</div>
+                    <div class="font-display font-medium sm:text-base phoneS:text-base py-3 px-10 bg-slate-50 hover:bg-slate-200 cursor-pointer">Contact</div>
+                  </div> -->
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div id="overlay" class="hidden fixed top-[81px] right-0 w-full h-full backdrop-blur-sm dark:bg-main-blue/20 z-[18] transition-all"></div>
+    <div id="sideMenu" class="h-full hidden w-0 fixed top-20 z-20 right-0 px-2 pl-2 bg-white border-solid border-l border-slate-200 overflow-x-hidden transition-all">
+      <div class="flex flex-col py-3 gap-2">
+        <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv('productsDiv')">
+          <img src="img/icons/products.svg" alt="" />
+          <p class="font-display font-semibold text-base text-gray-700">Produse</p>
+        </div>
+        <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv('contactDiv')">
+          <img src="img/icons/contact.svg" alt="" />
+          <p class="font-display font-semibold text-base text-gray-700">Contact</p>
+        </div>
+        <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv('deliveryDiv')">
+          <img src="img/icons/delivery.svg" alt="" />
+          <p class="font-display font-semibold text-base text-gray-700">Livrare</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="hidden" id="_activeListStyle">List</p>
+    <p class="hidden" id="_activeCategoryStyle">All</p>
+
+    <div class="flex items-start justify-between">
+      <div class="mt-8 pl-6 pr-2 min-w-64">
+        <div class="fixed">
+          <div class="flex items-center gap-2 select-none mb-4">
+            <img class="h-6" src="img/icons/category.svg" alt="" />
+            <p class="uppercase content-center font-display font-extrabold text-base text-gray-700 pt-1">Categorii</p>
+          </div>
+          <div class="category ml-[11px]">
+            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Toate', this)">Toate</p>
+            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Alte Produse', this)">Alte Produse</p>
+            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Cutii Pizza', this)">Cutii Pizza</p>
+            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Folii/Hârtii Alimentare', this)">
+              Folii/Hârtii Alimentare
+            </p>
+            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Pahare', this)">Pahare</p>
+            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Tacâmuri', this)">Tacâmuri</p>
+            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Platouri Plastic</p>
+            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Platouri Aluminiu</p>
+            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Farfurii</p>
+            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Boluri</p>
+            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Caserole</p>
+          </div>
+
+          <div class="flex items-center gap-2 select-none mb-4 mt-8">
+            <img class="h-6" src="img/icons/price.svg" alt="" />
+            <p class="uppercase content-center font-display font-extrabold text-base text-gray-700 pt-1">Preț</p>
+          </div>
+          <div class="category ml-[11px]">
+            <p class="block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Sub 10</p>
+            <p class="block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">10 - 30</p>
+            <p class="block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">30 - 60</p>
+            <p class="block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">60 - 80</p>
+          </div>
+        </div>
+      </div>
+      <div id="productsDiv" class="d-product w-full mt-8 lg:mr-32 sm:mr-8 phoneS:mx-2 transition-all ease-in-out duration-400">
+        <div class="flex justify-between mb-4">
+          <div>
+            <p class="uppercase font-display font-black sm:text-3xl phoneS:text-2xl tracking-wide">PRODUSE</p>
+          </div>
+          <div class="flex justify-between items-center gap-3">
+            <div class="flex justify-between items-center p-1 gap-1 bg-slate-200/70 rounded-lg">
+              <button id="list" class="rounded-md hover:bg-slate-200" onclick="listItems()">
+                <img class="min-w-8 sm:h-8 phoneS:h-7 p-1" src="img/icons/list.svg" alt="" />
+              </button>
+
+              <img class="top-1 h-4 w-1" src="img/icons/dot.svg" alt="" />
+              <button id="grid" class="rounded-md" onclick="gridItems()">
+                <img class="min-w-8 sm:h-8 phoneS:h-7 p-1" src="img/icons/grid.svg" alt="" />
+              </button>
+            </div>
+            <!-- <div class="flex items-center gap-1 sm:h-10 phoneS:h-9"> 
+              <div>
+                <p class="number-product font-display font-bold text-gray-700 sm:text-base phoneS:text-sm py-2 px-4 bg-slate-200/70 hover:bg-slate-200 rounded-s-lg cursor-pointer" onclick="dropdownProducts()">8</p>
+              </div>
+              <div id="dropdowns" class="flex items-center sm:h-10 phoneS:h-9 py-1 px-1 bg-slate-200/70 hover:bg-slate-200 rounded-r-lg" onclick="dropdownProducts()">
+                <img class="sm:h-5 phoneS:h-4 font-display font-bold" src="img/icons/chevron-down.svg" alt="" />
+                <div class="dropdown relative inline-block">
+                  <div id="selectDisplayNumber" class="selectDisplayNumber hidden absolute sm:min-w-[82px] phoneS:min-w-[75.5px] top-5 -right-1 overflow-auto z-10">
+                    <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 mt-1 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-t-lg cursor-pointer" onclick="displayProducts(8, 'all')">8</div>
+                    <div class="font-display font-bold text-gray-700 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(16, 'all')">16</div>
+                    <div class="font-display font-bold text-gray-700 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(24, 'all')">24</div>
+                    <div class="font-display font-bold text-gray-700 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-b-lg cursor-pointer" onclick="displayProducts(24, 'all')">Toate</div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="font-display font-medium text-end sm:text-sm phoneS:text-xs text-gray-500">*toate prețurile includ TVA</div>
+        <div class="products-list grid lg:grid-cols-1 md:grid-cols-1 gap-4 phoneS:grid-cols-1 font-display"></div>
+        <div class="products-grid grid lg:grid-cols-3 md:grid-cols-2 gap-4 phoneS:grid-cols-2 font-display"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -71,7 +71,8 @@ function displayProducts(maxProductsToDisplay) {
             </div>
             <div class="flex flex-col justify-between ml-6 my-1 w-full">
               <div>
-                <p class="font-bold sm:text-lg phoneS:text-base ">${item.title}</p>
+                <p class="font-extrabold sm:text-xs phoneS:text-[11px] text-gray-500 uppercase">${item.category}</p>
+                <p class="font-bold sm:text-lg phoneS:text-base text-main-blue">${item.title}</p>
                 <p class="specification1 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600">${item.specification1}</p>
                 <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600">${item.specification2}</p>
               </div>
@@ -128,7 +129,7 @@ let products = [];
       products = JSON.parse(this.responseText);
       let _activeListStyle = document.getElementById("_activeListStyle");
       _activeListStyle.innerHTML = 'List';
-      displayProducts(10);
+      displayProducts(8);
     }
 }
 
@@ -146,7 +147,7 @@ function listItems() {
     products = JSON.parse(this.responseText);
     let _activeListStyle = document.getElementById("_activeListStyle");
       _activeListStyle.innerHTML = 'List';
-    displayProducts(10)
+    displayProducts(8)
   }
 }
 }
@@ -165,7 +166,7 @@ function gridItems() {
     products = JSON.parse(this.responseText)
     let _activeListStyle = document.getElementById("_activeListStyle");
     _activeListStyle.innerHTML = 'Grid';
-    displayProducts(10);
+    displayProducts(8);
   }
 }
 }
