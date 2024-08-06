@@ -104,13 +104,15 @@ function gridItems() {
 
 function displayProducts() {
   let _activeListStyle = document.getElementById("_activeListStyle").innerText;
+  let _activePrice = document.getElementById("_activePrice").innerText;
   let productsOutput = "";
 
   if (_activeListStyle === "List") {
     for (let item of products) {
       let pricePer = `${item.price} RON <span class="sm:text-base phoneM:text-sm phoneS:text-xs text-gray-500 tracking-wide"> / ${item.per}</span>`;
 
-      productsOutput += `
+      if (item.price <= _activePrice || item.price >= 0) {
+        productsOutput += `
           <div class="product flex bg-slate-50 border border-solid border-slate-200 hover:border-slate-400/40 hover:shadow-sm rounded-xl p-3">
             <div>
               <img class="sm:min-w-32 sm:h-32 phoneS:min-w-28 phoneS:h-28 w-full rounded-lg" src="${item.image}" alt="${item.image}">
@@ -128,6 +130,8 @@ function displayProducts() {
             </div>
           </div>
         `;
+      } else {
+      }
     }
     document.querySelector(".products-list").innerHTML = productsOutput;
     // if(maxProductsToDisplay === 24) {
@@ -168,13 +172,14 @@ function displayProducts() {
 function displayCategoryProducts() {
   let _activeListStyle = document.getElementById("_activeListStyle").innerText;
   let _activeCategoryStyle = document.getElementById("_activeCategoryStyle").innerText;
+  let _activePrice = document.getElementById("_activePrice").innerText;
   let productsOutput = "";
 
   if (_activeListStyle === "List") {
     for (let item of products) {
       let pricePer = `${item.price} RON <span class="sm:text-base phoneM:text-sm phoneS:text-xs text-gray-500 tracking-wide"> / ${item.per}</span>`;
 
-      if (item.category === _activeCategoryStyle) {
+      if (item.category === _activeCategoryStyle && item.price <= _activePrice) {
         productsOutput += `
           <div class="product flex bg-slate-50 border border-solid border-slate-200 hover:border-slate-400/40 hover:shadow-sm rounded-xl p-3">
             <div>
@@ -239,7 +244,7 @@ function displayCategoryProducts() {
 }
 
 function categoryProduct(category, element) {
-  let buttons = document.getElementsByClassName("pcategory");
+  let buttons = document.getElementsByClassName("categoryB");
   for (let button of buttons) {
     button.classList.remove("border-green-500", "text-green-600");
   }
@@ -255,8 +260,24 @@ function categoryProduct(category, element) {
 
   return _activeCategoryStyle.innerText;
 }
+function choosedPrice(price, element) {
+  let buttons = document.getElementsByClassName("priceB");
+  for (let button of buttons) {
+    button.classList.remove("border-green-500", "text-green-600");
+  }
+  element.classList.add("border-green-500", "text-green-600");
 
-window.onload = document.getElementsByClassName("pcategory")[0].classList.add("border-green-500", "text-green-600");
+  let _activePrice = document.getElementById("_activePrice");
+  _activePrice.innerHTML = price;
+  console.log(_activePrice.innerText);
+
+  if (price === 0) {
+    displayProducts();
+  } else {
+    displayCategoryProducts();
+  }
+}
+window.onload = document.getElementsByClassName("categoryB")[0].classList.add("border-green-500", "text-green-600");
 window.onload = function () {
   document.getElementById("form").reset();
 };

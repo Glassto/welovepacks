@@ -80,7 +80,8 @@
     </div>
 
     <p class="hidden" id="_activeListStyle">List</p>
-    <p class="hidden" id="_activeCategoryStyle">All</p>
+    <p class="hidden" id="_activeCategoryStyle"></p>
+    <p class="hidden" id="_activePrice">99</p>
 
     <div class="flex items-start justify-between">
       <div class="mt-8 pl-6 pr-2 min-w-64">
@@ -90,19 +91,19 @@
             <p class="uppercase content-center font-display font-extrabold text-base text-gray-700 pt-1">Categorii</p>
           </div>
           <div class="category ml-[11px]">
-            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Toate', this)">Toate</p>
-            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Alte Produse', this)">Alte Produse</p>
-            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Cutii Pizza', this)">Cutii Pizza</p>
-            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Folii/Hârtii Alimentare', this)">
+            <p class="categoryB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Toate', this)">Toate</p>
+            <p class="categoryB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Alte Produse', this)">Alte Produse</p>
+            <p class="categoryB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Cutii Pizza', this)">Cutii Pizza</p>
+            <p class="categoryB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Folii/Hârtii Alimentare', this)">
               Folii/Hârtii Alimentare
             </p>
-            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Pahare', this)">Pahare</p>
-            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Tacâmuri', this)">Tacâmuri</p>
-            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Platouri Plastic</p>
-            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Platouri Aluminiu</p>
-            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Farfurii</p>
-            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Boluri</p>
-            <p class="pcategory block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Caserole</p>
+            <p class="categoryB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Pahare', this)">Pahare</p>
+            <p class="categoryB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="categoryProduct('Tacâmuri', this)">Tacâmuri</p>
+            <p class="categoryB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Platouri Plastic</p>
+            <p class="categoryB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Platouri Aluminiu</p>
+            <p class="categoryB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Farfurii</p>
+            <p class="categoryB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Boluri</p>
+            <p class="categoryB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Caserole</p>
           </div>
 
           <div class="flex items-center gap-2 select-none mb-4 mt-8">
@@ -110,10 +111,10 @@
             <p class="uppercase content-center font-display font-extrabold text-base text-gray-700 pt-1">Preț</p>
           </div>
           <div class="category ml-[11px]">
-            <p class="block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">Sub 10</p>
-            <p class="block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">10 - 30</p>
-            <p class="block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">30 - 60</p>
-            <p class="block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer">60 - 80</p>
+            <p class="priceB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="choosedPrice(10, this)">Sub 10</p>
+            <p class="priceB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="choosedPrice(30, this)">10 - 30</p>
+            <p class="priceB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="choosedPrice(60, this)">30 - 60</p>
+            <p class="priceB block font-display border-l-[1.7px] pl-4 py-1 -ml-px border-gray-400 hover:border-green-500 text-slate-600 hover:text-green-600 cursor-pointer" onclick="choosedPrice(80, this)">60 - 80</p>
           </div>
         </div>
       </div>
