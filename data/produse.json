@@ -5,7 +5,7 @@
     "title": "Sacoșă hârtie cu mâner",
     "specification1": "Dimensiune: 28/29/17 cm",
     "specification2": "",
-    "price": "0.50",
+    "price": 0.50,
     "per": "buc"
   },
   {
@@ -14,7 +14,7 @@
     "title": "Mănuși negre nitril",
     "specification1": "Dimensiune: M",
     "specification2": "",
-    "price": "18",
+    "price": 18,
     "per": "100 buc"
   },
   {
@@ -23,16 +23,16 @@
     "title": "Pungi alimentare",
     "specification1": "Capacitate: 2kg",
     "specification2": "1 rolă = 350 buc",
-    "price": "8",
+    "price": 8,
     "per": "rolă"
   },
   {
-    "image": "img/images/products/saci-menajeri-negri.png",
+    "image": "img/images/products/saci-menajeri-galbeni.png",
     "category": "Alte Produse",
-    "title": "Saci menajeri negri",
+    "title": "Saci menajeri galbeni",
     "specification1": "Volum: 240L",
     "specification2": "1 rolă = 10 buc",
-    "price": "9",
+    "price": 9,
     "per": "rolă"
   },
   {
@@ -41,7 +41,7 @@
     "title": "Saci menajeri galbeni HDPE",
     "specification1": "Volum: 60L",
     "specification2": "1 rolă = 20 buc",
-    "price": "6",
+    "price": 6,
     "per": "rolă"
   },
   {
@@ -50,7 +50,7 @@
     "title": "Șervețele albe",
     "specification1": "Dimensiune: 33/33 cm",
     "specification2": "Grosime: 1 strat",
-    "price": "4",
+    "price": 4,
     "per": "80 buc"
   },
   {
@@ -59,7 +59,7 @@
     "title": "Șervețele albe",
     "specification1": "Dimensiune: 25/25 cm",
     "specification2": "Grosime: 1 strat",
-    "price": "1.5",
+    "price": 1.5,
     "per": "40 buc"
   },
   {
@@ -68,34 +68,43 @@
     "title": "Paie negre flexibile din PP ambalate individual",
     "specification1": "",
     "specification2": "",
-    "price": "35",
+    "price": 35,
     "per": "1000 buc"
   },
   {
     "image": "img/images/products/scobitori-lemn-ambalate-individual.png",
     "category": "Alte Produse",
-    "title": "Scobitori din lemn ambalate individual",
+    "title": "Scobitori lemn ambalate individual",
     "specification1": "",
     "specification2": "",
-    "price": "6",
+    "price": 6,
     "per": "1000 buc"
   },
   {
     "image": "img/images/products/bete-frigarui.png",
     "category": "Alte Produse",
     "title": "Bețe pentru frigărui",
-    "specification1": "",
+    "specification1": "Dimensiune: 25 cm",
     "specification2": "",
-    "price": "3",
+    "price": 3,
     "per": "100 buc"
   },
   {
     "image": "img/images/products/sosiera-capac-atasat.png",
     "category": "Alte Produse",
     "title": "Sosieră PET cu capac atașat",
-    "specification1": "Capacitate: 80cc",
+    "specification1": "Capacitate: 80ml",
     "specification2": "",
-    "price": "10",
+    "price": 10,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/sosiera-capac-atasat.png",
+    "category": "Alte Produse",
+    "title": "Sosieră PET cu capac atașat",
+    "specification1": "Capacitate: 50ml",
+    "specification2": "",
+    "price": 9,
     "per": "100 buc"
   },
   {
@@ -104,7 +113,7 @@
     "title": "Cutie pizza kraft",
     "specification1": "Dimensiune: 40/40 cm",
     "specification2": "",
-    "price": "70",
+    "price": 70,
     "per": "50 buc"
   },
   {
@@ -113,7 +122,7 @@
     "title": "Cutie pizza kraft",
     "specification1": "Dimensiune: 32/32 cm",
     "specification2": "",
-    "price": "77",
+    "price": 77,
     "per": "100 buc"
   },
   {
@@ -122,7 +131,7 @@
     "title": "Cutie pizza kraft",
     "specification1": "Dimensiune: 28/28 cm",
     "specification2": "",
-    "price": "75",
+    "price": 75,
     "per": "100 buc"
   },
   {
@@ -131,7 +140,7 @@
     "title": "Cutie pizza albă",
     "specification1": "Dimensiune: 25/25 cm",
     "specification2": "",
-    "price": "70",
+    "price": 70,
     "per": "100 buc"
   },
   {
@@ -140,7 +149,7 @@
     "title": "Hârtie de copt",
     "specification1": "Dimensiune: 37/50 cm",
     "specification2": "",
-    "price": "32",
+    "price": 32,
     "per": "rolă"
   },
   {
@@ -149,7 +158,7 @@
     "title": "Folie alimentară",
     "specification1": "Dimensiune: 45 cm",
     "specification2": "Greutate: 984 gr",
-    "price": "28",
+    "price": 28,
     "per": "rolă"
   },
   {
@@ -158,7 +167,7 @@
     "title": "Folie alimentară",
     "specification1": "Dimensiune: 30 cm",
     "specification2": "Greutate: 640 gr",
-    "price": "15",
+    "price": 15,
     "per": "rolă"
   },
   {
@@ -167,7 +176,7 @@
     "title": "Folie aluminiu",
     "specification1": "Dimensiune: 45 cm",
     "specification2": "Greutate: 900 gr",
-    "price": "30",
+    "price": 30,
     "per": "rolă"
   },
   {
@@ -176,35 +185,107 @@
     "title": "Folie aluminiu",
     "specification1": "Dimensiune: 30 cm",
     "specification2": "Greutate: 700 gr",
-    "price": "22",
+    "price": 22,
     "per": "rolă"
   },
   {
-    "image": "img/images/products/capace-bombate-frappe.png",
-    "category": "Pahare",
-    "title": "Capace bombate frappe cu orificiu pentru pai",
-    "specification1": "",
-    "specification2": "",
-    "price": "12",
-    "per": "100 buc"
-  },
-  {
-    "image": "img/images/products/pahare-carton.png",
+    "image": "img/images/products/pahar-carton.png",
     "category": "Pahare",
     "title": "Pahare carton",
     "specification1": "Volum: 118 ml",
     "specification2": "",
-    "price": "5",
+    "price": 5,
     "per": "50 buc"
   },
   {
-    "image": "img/images/products/set-lingure-servetel.png",
-    "category": "Tacâmuri",
-    "title": "Set: lingură + furculiță + cuțit transparente PP + șervețel",
+    "image": "img/images/products/pahar-carton.png",
+    "category": "Pahare",
+    "title": "Pahare carton",
+    "specification1": "Volum: 200 ml",
+    "specification2": "",
+    "price": 7,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/pahar-plastic-transparent-250ml.png",
+    "category": "Pahare",
+    "title": "Pahar transparent frappe",
+    "specification1": "Volum: 250 ml",
+    "specification2": "",
+    "price": 5,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/pahar-plastic-transparent-400ml.png",
+    "category": "Pahare",
+    "title": "Pahar transparent frappe",
+    "specification1": "Volum: 400 ml",
+    "specification2": "",
+    "price": 10,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/pahar-biodegradabil-260ml.png",
+    "category": "Pahare",
+    "title": "Pahar biodegradabil",
+    "specification1": "Volum: 260 ml",
+    "specification2": "",
+    "price": 20,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/pahar-biodegradabil-450ml.png",
+    "category": "Pahare",
+    "title": "Pahar biodegradabil",
+    "specification1": "Volum: 450 ml",
+    "specification2": "",
+    "price": 30,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/capac-bombat-frappe.png",
+    "category": "Pahare",
+    "title": "Capac bombat frappe cu orificiu pentru pai",
     "specification1": "",
     "specification2": "",
-    "price": "30",
+    "price": 12,
     "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/set-lingurite-pla-lux.png",
+    "category": "Tacâmuri",
+    "title": "Set: lingurițe PLA lux transparente",
+    "specification1": "",
+    "specification2": "",
+    "price": 6.5,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/set-linguri-pla.png",
+    "category": "Tacâmuri",
+    "title": "Set: linguri PLA reutilizabile",
+    "specification1": "",
+    "specification2": "",
+    "price": 3,
+    "per": "10 buc"
+  },
+  {
+    "image": "img/images/products/set-furculite-pla.png",
+    "category": "Tacâmuri",
+    "title": "Set: furculițe PLA reutilizabile",
+    "specification1": "",
+    "specification2": "",
+    "price": 3,
+    "per": "10 buc"
+  },
+  {
+    "image": "img/images/products/set-cutite-pla.png",
+    "category": "Tacâmuri",
+    "title": "Set: cuțite PLA reutilizabile",
+    "specification1": "",
+    "specification2": "",
+    "price": 3,
+    "per": "10 buc"
   },
   {
     "image": "img/images/products/set-lingura-servetel.png",
@@ -212,7 +293,160 @@
     "title": "Set: lingură PP + șervețel",
     "specification1": "",
     "specification2": "",
-    "price": "17",
+    "price": 17,
     "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/set-lingura-servetel-transparenta.png",
+    "category": "Tacâmuri",
+    "title": "Set: lingură transparentă PP + șervețel",
+    "specification1": "",
+    "specification2": "",
+    "price": 17,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/set-furculita-servetel-transparenta.png",
+    "category": "Tacâmuri",
+    "title": "Set: furculiță transparentă PP + șervețel",
+    "specification1": "",
+    "specification2": "",
+    "price": 18,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/set-furculita-cutit-servetel-transparente.png",
+    "category": "Tacâmuri",
+    "title": "Set: furculiță + cuțit transparente PP + șervețel",
+    "specification1": "",
+    "specification2": "",
+    "price": 22,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/set-furculita-cutit-servetel-pla.png",
+    "category": "Tacâmuri",
+    "title": "Set: furculiță + cuțit albe PLA + șervețel",
+    "specification1": "",
+    "specification2": "",
+    "price": 22,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/set-lingura-furculita-cutit-servetel-transparente.png",
+    "category": "Tacâmuri",
+    "title": "Set: lingură + furculiță + cuțit transparente PP + șervețel",
+    "specification1": "",
+    "specification2": "",
+    "price": 30,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/platou-plastic-negru-35cm.png",
+    "category": "Platouri Plastic",
+    "title": "Platou plastic negru cu capac transparent",
+    "specification1": "Dimensiune: 35 cm",
+    "specification2": "",
+    "price": 40,
+    "per": "10 buc"
+  },
+  {
+    "image": "img/images/products/platou-plastic-negru-45cm.png",
+    "category": "Platouri Plastic",
+    "title": "Platou plastic negru cu capac transparent",
+    "specification1": "Dimensiune: 45 cm",
+    "specification2": "",
+    "price": 59,
+    "per": "10 buc"
+  },
+  {
+    "image": "img/images/products/platou-aluminiu-252pe180mm.png",
+    "category": "Platouri Aluminiu",
+    "title": "Platou aluminiu",
+    "specification1": "Dimensiune: 252/180 mm",
+    "specification2": "",
+    "price": 9,
+    "per": "10 buc"
+  },
+  {
+    "image": "img/images/products/platou-aluminiu-350pe250mm.png",
+    "category": "Platouri Aluminiu",
+    "title": "Platou aluminiu",
+    "specification1": "Dimensiune: 350/250 mm",
+    "specification2": "",
+    "price": 12.5,
+    "per": "10 buc"
+  },
+  {
+    "image": "img/images/products/platou-aluminiu-540pe362mm.png",
+    "category": "Platouri Aluminiu",
+    "title": "Platou aluminiu",
+    "specification1": "Dimensiune: 540/362 mm",
+    "specification2": "",
+    "price": 57,
+    "per": "10 buc"
+  },
+  {
+    "image": "img/images/products/farfurie-pla-21cm.png",
+    "category": "Farfurii",
+    "title": "Farfurie plastic",
+    "specification1": "Dimensiune: 21/21 cm",
+    "specification2": "",
+    "price": 9,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/farfurie-rotunda-bio-18cm.png",
+    "category": "Farfurii",
+    "title": "Farfurie biodegradabilă",
+    "specification1": "Dimensiune: 18/18 cm",
+    "specification2": "",
+    "price": 15,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/farfurie-rotunda-bio-26cm.png",
+    "category": "Farfurii",
+    "title": "Farfurie biodegradabilă",
+    "specification1": "Dimensiune: 26/26 cm",
+    "specification2": "",
+    "price": 29,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/farfurie-rotunda-bio-3compartimente-26cm.png",
+    "category": "Farfurii",
+    "title": "Farfurie biodegradabilă 3 compartimente",
+    "specification1": "Dimensiune: 26/26 cm",
+    "specification2": "",
+    "price": 29,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/farfurie-ovala-bio-26cm.png",
+    "category": "Farfurii",
+    "title": "Farfurie ovală biodegradabilă",
+    "specification1": "Dimensiune: 26/26 cm",
+    "specification2": "",
+    "price": 22,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/farfurie-ovala-bio-32cm.png",
+    "category": "Farfurii",
+    "title": "Farfurie ovală biodegradabilă",
+    "specification1": "Dimensiune: 32/32 cm",
+    "specification2": "",
+    "price": 35,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/farfurie-patrata-bio-20cm.png",
+    "category": "Farfurii",
+    "title": "Farfurie pătrată biodegradabilă",
+    "specification1": "Dimensiune: 32/32 cm",
+    "specification2": "",
+    "price": 35,
+    "per": "50 buc"
   }
 ]

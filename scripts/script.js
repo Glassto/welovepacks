@@ -5,19 +5,18 @@ function dropdownMenu() {
   document.getElementById("selectInMenu").classList.toggle("hidden");
 }
 
-
 function useBorderOnScroll() {
-    let navbar = document.getElementById("nav");
-    let pre = document.getElementById("pre")
-    let preTopCoord = pre.getBoundingClientRect().top
-    if (window.scrollY <= preTopCoord + 10) {
-        navbar.classList.remove('border-b');
-    } else {
-        navbar.classList.add('border-b');
-    }
+  let navbar = document.getElementById("nav");
+  let pre = document.getElementById("pre");
+  let preTopCoord = pre.getBoundingClientRect().top;
+  if (window.scrollY <= preTopCoord + 10) {
+    navbar.classList.remove("border-b");
+  } else {
+    navbar.classList.add("border-b");
+  }
 }
 
-window.addEventListener('scroll', useBorderOnScroll);
+window.addEventListener("scroll", useBorderOnScroll);
 
 useBorderOnScroll();
 
@@ -31,40 +30,40 @@ function scrollToDiv(object) {
 
   // Scroll la poziția div-ului
   window.scrollTo({
-      top: offsetPosition
+    top: offsetPosition,
   });
 }
 
 let isOpened = false;
 function sideMenu() {
-  
   let toggleButton = document.getElementById("sideMenu");
   let toggleImage = document.getElementById("sideMenuImageToggle");
+  let stopScroll = document.getElementById("body");
 
   toggleButton.classList.toggle("hidden");
+  stopScroll.classList.toggle("h-full");
+  stopScroll.classList.toggle("overflow-hidden");
   document.getElementById("sideMenu").classList.toggle("w-56");
   document.getElementById("overlay").classList.toggle("hidden");
 
   if (isOpened === false) {
-    toggleImage.src="./img/icons/close.svg";
+    toggleImage.src = "./img/icons/close.svg";
     isOpened = true;
   } else {
-    toggleImage.src="./img/icons/menu.svg";
+    toggleImage.src = "./img/icons/menu.svg";
     isOpened = false;
   }
 }
 
-
 function displayProducts(maxProductsToDisplay) {
-  let _activeListStyle = document.getElementById("_activeListStyle") || 'List';
-      let output = "";
+  let _activeListStyle = document.getElementById("_activeListStyle") || "List";
+  let output = "";
 
-      if(_activeListStyle.innerText === 'List') {
-
-        for (let i = 0; i < maxProductsToDisplay; i++) {
-          let item = products[i];
-          let pricePer = `${item.price} RON <span class="sm:text-base phoneM:text-sm phoneS:text-xs text-gray-500 tracking-wide"> / ${item.per}</span>`
-          output += `
+  if (_activeListStyle.innerText === "List") {
+    for (let i = 0; i < maxProductsToDisplay; i++) {
+      let item = products[i];
+      let pricePer = `${item.price} RON <span class="sm:text-base phoneM:text-sm phoneS:text-xs text-gray-500 tracking-wide"> / ${item.per}</span>`;
+      output += `
           <div class="product flex bg-slate-50 border border-solid border-slate-200 hover:border-slate-400/40 hover:shadow-sm rounded-xl p-3">
             <div>
               <img class="sm:min-w-32 sm:h-32 phoneS:min-w-28 phoneS:h-28 w-full rounded-lg" src="${item.image}" alt="${item.image}">
@@ -82,16 +81,14 @@ function displayProducts(maxProductsToDisplay) {
             </div>
           </div>
         `;
-        }
-        document.querySelector(".products-list").innerHTML = output;
-        document.querySelector(".number-product").innerHTML = maxProductsToDisplay;
-
-      } else {
-
-        for (let i = 0; i < maxProductsToDisplay; i++) {
-          let item = products[i];
-          let pricePer = `${item.price} RON <span class="text-base sm:text-base phoneM:text-sm phoneS:text-xs text-gray-500 tracking-wide"> / ${item.per}</span>`
-          output += `
+    }
+    document.querySelector(".products-list").innerHTML = output;
+    document.querySelector(".number-product").innerHTML = maxProductsToDisplay;
+  } else {
+    for (let i = 0; i < maxProductsToDisplay; i++) {
+      let item = products[i];
+      let pricePer = `${item.price} RON <span class="text-base sm:text-base phoneM:text-sm phoneS:text-xs text-gray-500 tracking-wide"> / ${item.per}</span>`;
+      output += `
         <div class="product flex flex-col bg-slate-50 border border-solid border-slate-200 hover:border-slate-300 rounded-xl p-3">
           <div>
             <img class="h-full w-full rounded-lg" src="${item.image}" alt="${item.image}">
@@ -108,71 +105,67 @@ function displayProducts(maxProductsToDisplay) {
           </div>
         </div>
       `;
-        }
-        document.querySelector(".products-grid").innerHTML = output;
-        document.querySelector(".number-product").innerHTML = maxProductsToDisplay;
-      }
     }
-
-
+    document.querySelector(".products-grid").innerHTML = output;
+    document.querySelector(".number-product").innerHTML = maxProductsToDisplay;
+  }
+}
 
 let products = [];
-  let http = new XMLHttpRequest();
-  http.open('get', 'data/produse.json', true);
-  http.send();
+let http = new XMLHttpRequest();
+http.open("get", "data/produse.json", true);
+http.send();
 
-  http.onload = function() {
-  document.querySelector(".products-grid").style.display = 'none'
-  document.getElementById('list').style.background = 'white';
-  document.getElementById('grid').style.background = 'transparent';
-    if(this.readyState == 4 && this.status == 200) {
-      products = JSON.parse(this.responseText);
-      let _activeListStyle = document.getElementById("_activeListStyle");
-      _activeListStyle.innerHTML = 'List';
-      displayProducts(8);
-    }
-}
+http.onload = function () {
+  document.querySelector(".products-grid").style.display = "none";
+  document.getElementById("list").style.background = "white";
+  document.getElementById("grid").style.background = "transparent";
+  if (this.readyState == 4 && this.status == 200) {
+    products = JSON.parse(this.responseText);
+    let _activeListStyle = document.getElementById("_activeListStyle");
+    _activeListStyle.innerHTML = "List";
+    displayProducts(8);
+  }
+};
 
 function listItems() {
   let http = new XMLHttpRequest();
-  http.open('get', 'data/produse.json', true);
+  http.open("get", "data/produse.json", true);
   http.send();
 
-  http.onload = function() {
-  document.querySelector(".products-list").style.display = 'grid'
-  document.querySelector(".products-grid").style.display = 'none'
-  document.getElementById('list').style.background = 'white';
-  document.getElementById('grid').style.background = 'transparent';
-  if(this.readyState == 4 && this.status == 200) {
-    products = JSON.parse(this.responseText);
-    let _activeListStyle = document.getElementById("_activeListStyle");
-      _activeListStyle.innerHTML = 'List';
-    displayProducts(8)
-  }
-}
+  http.onload = function () {
+    document.querySelector(".products-list").style.display = "grid";
+    document.querySelector(".products-grid").style.display = "none";
+    document.getElementById("list").style.background = "white";
+    document.getElementById("grid").style.background = "transparent";
+    if (this.readyState == 4 && this.status == 200) {
+      products = JSON.parse(this.responseText);
+      let _activeListStyle = document.getElementById("_activeListStyle");
+      _activeListStyle.innerHTML = "List";
+      displayProducts(8);
+    }
+  };
 }
 
 function gridItems() {
   let http = new XMLHttpRequest();
-  http.open('get', 'data/produse.json', true);
+  http.open("get", "data/produse.json", true);
   http.send();
 
-  http.onload = function() {
-  document.querySelector(".products-list").style.display = 'none'
-  document.querySelector(".products-grid").style.display = 'grid'
-  document.getElementById('grid').style.background = 'white';
-  document.getElementById('list').style.background = 'transparent';
-  if(this.readyState == 4 && this.status == 200) {
-    products = JSON.parse(this.responseText)
-    let _activeListStyle = document.getElementById("_activeListStyle");
-    _activeListStyle.innerHTML = 'Grid';
-    displayProducts(8);
-  }
+  http.onload = function () {
+    document.querySelector(".products-list").style.display = "none";
+    document.querySelector(".products-grid").style.display = "grid";
+    document.getElementById("grid").style.background = "white";
+    document.getElementById("list").style.background = "transparent";
+    if (this.readyState == 4 && this.status == 200) {
+      products = JSON.parse(this.responseText);
+      let _activeListStyle = document.getElementById("_activeListStyle");
+      _activeListStyle.innerHTML = "Grid";
+      displayProducts(8);
+    }
+  };
 }
-}
 
-window.onload = function() {
-        document.getElementById("form").reset();
-    };
-
-
+window.onload = function () {
+  document.getElementById("form").reset();
+};
