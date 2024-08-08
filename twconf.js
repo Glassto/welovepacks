@@ -2,10 +2,12 @@ tailwind.config = {
   theme: {
     extend: {
       minWidth: {
+        7.5: "1.875rem",
         50: "12.5rem",
         100: "25rem",
       },
       fontSize: {
+        15: "15px",
         title: "22px",
       },
       screens: {

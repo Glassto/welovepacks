@@ -34,7 +34,7 @@ window.addEventListener("scroll", disableFixedCategory);
 
 disableFixedCategory();
 
-let isOpened = false;
+let isSideMenuOpened = false;
 function sideMenu() {
   let toggleButton = document.getElementById("sideMenu");
   let toggleImage = document.getElementById("sideMenuImageToggle");
@@ -46,12 +46,34 @@ function sideMenu() {
   document.getElementById("sideMenu").classList.toggle("w-56");
   document.getElementById("overlay").classList.toggle("hidden");
 
-  if (isOpened === false) {
+  if (isSideMenuOpened === false) {
     toggleImage.src = "./img/icons/close.svg";
-    isOpened = true;
+    isSideMenuOpened = true;
   } else {
     toggleImage.src = "./img/icons/menu.svg";
-    isOpened = false;
+    isSideMenuOpened = false;
+  }
+}
+function categoryMenu() {
+  let toggleButton = document.getElementById("categoryMenu");
+  let toggleSideImage = document.getElementById("sideMenuImageToggle");
+  let toggleCategoryImage = document.getElementById("categoryMenuImageToggle");
+  let stopScroll = document.getElementById("body");
+
+  toggleSideImage.classList.toggle("hidden");
+  toggleCategoryImage.classList.toggle("hidden");
+  toggleButton.classList.toggle("hidden");
+  stopScroll.classList.toggle("h-full");
+  stopScroll.classList.toggle("overflow-hidden");
+  document.getElementById("categoryMenu").classList.toggle("w-56");
+  document.getElementById("overlay").classList.toggle("hidden");
+
+  if (isSideMenuOpened === false) {
+    toggleCategoryImage.src = "./img/icons/close.svg";
+    isSideMenuOpened = true;
+  } else {
+    toggleCategoryImage.src = "./img/icons/menu.svg";
+    isSideMenuOpened = false;
   }
 }
 
@@ -315,6 +337,7 @@ function choosedPrice(price, element) {
 
   window.scrollTo(0, 0);
 }
+window.onload = document.getElementsByClassName("priceB")[0].classList.add("border-green-500", "text-green-600", "font-medium", "bg-green-100/60", "rounded-r-lg");
 window.onload = document.getElementsByClassName("categoryB")[0].classList.add("border-green-500", "text-green-600", "font-medium");
 window.onload = function () {
   document.getElementById("form").reset();

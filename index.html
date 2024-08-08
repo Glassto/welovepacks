@@ -119,28 +119,28 @@
           <p class="uppercase font-display font-black sm:text-3xl phoneS:text-2xl tracking-wide">PRODUSE</p>
         </div>
         <div class="flex justify-between items-center gap-3">
-          <div class="flex justify-between items-center p-1 gap-1 bg-slate-200/70 rounded-lg">
-            <button id="list" class="rounded-md hover:bg-slate-200" onclick="listItems()">
-              <img class="min-w-8 sm:h-8 phoneS:h-7 p-1" src="img/icons/list.svg" alt="" />
+          <div class="flex justify-between items-center min-h-10 p-1 gap-1 border border-slate-200 bg-slate-200/70 rounded-lg">
+            <button id="list" class="rounded-md h-full hover:bg-slate-200" onclick="listItems()">
+              <img class="sm:min-w-8 sm:h-8 phoneS:min-w-[30px] phoneS:h-[30px] p-1" src="img/icons/list.svg" alt="" />
             </button>
 
             <img class="top-1 h-4 w-1" src="img/icons/dot.svg" alt="" />
             <button id="grid" class="rounded-md" onclick="gridItems()">
-              <img class="min-w-8 sm:h-8 phoneS:h-7 p-1" src="img/icons/grid.svg" alt="" />
+              <img class="sm:min-w-8 sm:h-8 phoneS:min-w-[30px] phoneS:h-[30px] p-1" src="img/icons/grid.svg" alt="" />
             </button>
           </div>
-          <div class="flex items-center gap-1 sm:h-10 phoneS:h-9">
+          <div class="flex items-center gap-1 min-h-10">
             <div>
-              <p class="number-product font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-slate-200/70 hover:bg-slate-200 rounded-s-lg cursor-pointer" onclick="dropdownProducts()">8</p>
+              <p class="number-product font-display font-bold min-h-10 text-gray-600 sm:text-base phoneS:text-15 py-2 px-4 border border-slate-200 bg-slate-200/70 hover:bg-slate-200 rounded-s-lg cursor-pointer" onclick="dropdownProducts()">8</p>
             </div>
-            <div id="dropdowns" class="flex items-center sm:h-10 phoneS:h-9 py-1 px-1 bg-slate-200/70 hover:bg-slate-200 rounded-r-lg" onclick="dropdownProducts()">
+            <div id="dropdowns" class="flex items-center min-h-10 py-1 px-1 border border-slate-200 bg-slate-200/70 hover:bg-slate-200 rounded-r-lg" onclick="dropdownProducts()">
               <img class="sm:h-5 phoneS:h-4 font-display font-bold" src="img/icons/chevron-down.svg" alt="" />
               <div class="dropdown relative inline-block">
                 <div id="selectDisplayNumber" class="selectDisplayNumber hidden absolute sm:min-w-[82px] phoneS:min-w-[75.5px] top-5 -right-1 overflow-auto z-10">
-                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 mt-1 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-t-lg cursor-pointer" onclick="displayProducts(8)">8</div>
-                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(16)">16</div>
-                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(24)">24</div>
-                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-sm py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-b-lg cursor-pointer" onclick="displayProducts(24)">Toate</div>
+                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-15 py-2 px-4 mt-1 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-t-lg cursor-pointer" onclick="displayProducts(8)">8</div>
+                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-15 py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(16)">16</div>
+                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-15 py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 cursor-pointer" onclick="displayProducts(24)">24</div>
+                  <div class="font-display font-bold text-gray-600 sm:text-base phoneS:text-15 py-2 px-4 bg-[rgba(234,238,244,255)] hover:bg-slate-200 rounded-b-lg cursor-pointer" onclick="displayProducts(24)">Toate</div>
                 </div>
               </div>
             </div>
