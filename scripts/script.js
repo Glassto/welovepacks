@@ -9,10 +9,12 @@ function useBorderOnScroll() {
   let navbar = document.getElementById("nav");
   let pre = document.getElementById("pre");
   let preTopCoord = pre.getBoundingClientRect().top;
-  if (window.scrollY <= preTopCoord + 10) {
+  if (window.scrollY <= preTopCoord - 20) {
     navbar.classList.remove("border-b");
+    navbar.classList.remove("shadow-sm");
   } else {
     navbar.classList.add("border-b");
+    navbar.classList.add("shadow-sm");
   }
 }
 
@@ -32,6 +34,8 @@ function scrollToDiv(object) {
   window.scrollTo({
     top: offsetPosition,
   });
+
+  sideMenu();
 }
 
 let isOpened = false;
@@ -40,11 +44,12 @@ function sideMenu() {
   let toggleImage = document.getElementById("sideMenuImageToggle");
   let stopScroll = document.getElementById("body");
 
-  toggleButton.classList.toggle("hidden");
+  toggleButton.classList.toggle("w-56");
+  toggleButton.classList.toggle("px-2");
   stopScroll.classList.toggle("h-full");
   stopScroll.classList.toggle("overflow-hidden");
-  document.getElementById("sideMenu").classList.toggle("w-56");
-  document.getElementById("overlay").classList.toggle("hidden");
+  document.getElementById("overlay").classList.toggle("w-screen");
+  document.getElementById("overlay").classList.toggle("backdrop-blur-sm");
 
   if (isOpened === false) {
     toggleImage.src = "./img/icons/close.svg";
@@ -66,7 +71,7 @@ function displayProducts(maxProductsToDisplay) {
       output += `
           <div class="product flex bg-slate-50 border border-solid border-slate-200 hover:border-slate-400/40 hover:shadow-sm rounded-xl p-3">
             <div>
-              <img class="sm:min-w-32 sm:h-32 phoneS:min-w-28 phoneS:h-28 w-full rounded-lg" src="${item.image}" alt="${item.image}">
+              <img class="sm:min-w-32 sm:w-32 sm:h-32 phoneS:min-w-28 phoneS:w-28 phoneS:h-28 w-full rounded-lg" src="${item.image}" alt="${item.image}">
             </div>
             <div class="flex flex-col justify-between ml-6 my-1 w-full">
               <div>

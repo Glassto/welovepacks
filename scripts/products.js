@@ -18,12 +18,15 @@ function scrollToDiv(object) {
     top: offsetPosition,
     behavior: "smooth",
   });
+
+  sideMenu();
 }
 function disableFixedCategory() {
   let categoryMenu = document.getElementById("sideCategory");
   let fixedCategoryMenu = document.getElementById("fixedCategory");
   let lastProduct = document.getElementById("productsDiv");
   let lastProductBottomCoord = lastProduct.getBoundingClientRect().bottom;
+  console.log(lastProductBottomCoord);
   if (window.innerHeight <= lastProductBottomCoord + 60) {
     fixedCategoryMenu.classList.add("fixed");
   } else {
@@ -40,11 +43,12 @@ function sideMenu() {
   let toggleImage = document.getElementById("sideMenuImageToggle");
   let stopScroll = document.getElementById("body");
 
-  toggleButton.classList.toggle("hidden");
+  toggleButton.classList.toggle("w-56");
+  toggleButton.classList.toggle("px-2");
   stopScroll.classList.toggle("h-full");
   stopScroll.classList.toggle("overflow-hidden");
-  document.getElementById("sideMenu").classList.toggle("w-56");
-  document.getElementById("overlay").classList.toggle("hidden");
+  document.getElementById("overlay").classList.toggle("w-screen");
+  document.getElementById("overlay").classList.toggle("backdrop-blur-sm");
 
   if (isSideMenuOpened === false) {
     toggleImage.src = "./img/icons/close.svg";
@@ -62,11 +66,12 @@ function categoryMenu() {
 
   toggleSideImage.classList.toggle("hidden");
   toggleCategoryImage.classList.toggle("hidden");
-  toggleButton.classList.toggle("hidden");
+  toggleButton.classList.toggle("w-56");
+  toggleButton.classList.toggle("px-2");
   stopScroll.classList.toggle("h-full");
   stopScroll.classList.toggle("overflow-hidden");
-  document.getElementById("categoryMenu").classList.toggle("w-56");
-  document.getElementById("overlay").classList.toggle("hidden");
+  document.getElementById("overlay").classList.toggle("w-screen");
+  document.getElementById("overlay").classList.toggle("backdrop-blur-sm");
 
   if (isSideMenuOpened === false) {
     toggleCategoryImage.src = "./img/icons/close.svg";
@@ -207,23 +212,23 @@ function displayCategoryProducts() {
 
   if (_activeListStyle === "List") {
     for (let item of products) {
-      let pricePer = `${item.price} RON <span class="sm:text-base phoneM:text-sm phoneS:text-xs text-gray-500 tracking-wide"> / ${item.per}</span>`;
+      let pricePer = `${item.price} RON <span class="sm:text-base phoneM:text-xs phoneS:text-[10px] text-gray-500 tracking-wide"> / ${item.per}</span>`;
 
       if (item.category === _activeCategoryStyle && item.price <= _activePrice) {
         productsOutput += `
           <div class="product flex bg-slate-50 border border-solid border-slate-200 hover:border-slate-400/40 hover:shadow-sm rounded-xl p-3">
             <div>
-              <img class="sm:min-w-32 sm:h-32 phoneS:min-w-28 phoneS:h-28 w-full rounded-lg" src="${item.image}" alt="${item.image}">
+              <img class="sm:min-w-32 sm:w-32 sm:h-32 phoneS:min-w-28 phoneS:w-28 phoneS:h-28 w-full rounded-lg" src="${item.image}" alt="${item.image}">
             </div>
             <div class="flex flex-col justify-between ml-6 my-1 w-full">
               <div>
-                <p class="font-extrabold sm:text-xs phoneS:text-[11px] text-gray-400 uppercase">${item.category}</p>
+                <p class="font-extrabold sm:text-xs phoneS:text-[10px] text-gray-400 uppercase">${item.category}</p>
                 <p class="font-bold sm:text-lg phoneS:text-base text-main-blue">${item.title}</p>
                 <p class="specification1 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600">${item.specification1}</p>
                 <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600">${item.specification2}</p>
               </div>
               <div>
-                <p class="price font-black sm:text-title phoneM:text-[20px] phoneS:text-[17px] text-main-blue text-right pr-4">${pricePer}</p>
+                <p class="price font-black sm:text-xl phoneM:text-base phoneS:text-sm text-main-blue text-right pr-4">${pricePer}</p>
               </div>
             </div>
           </div>
@@ -232,17 +237,17 @@ function displayCategoryProducts() {
         productsOutput += `
           <div class="product flex bg-slate-50 border border-solid border-slate-200 hover:border-slate-400/40 hover:shadow-sm rounded-xl p-3">
             <div>
-              <img class="sm:min-w-32 sm:h-32 phoneS:min-w-28 phoneS:h-28 w-full rounded-lg" src="${item.image}" alt="${item.image}">
+              <img class="sm:min-w-32 sm:w-32 sm:h-32 phoneS:min-w-28 phoneS:w-28 phoneS:h-28 w-full rounded-lg" src="${item.image}" alt="${item.image}">
             </div>
             <div class="flex flex-col justify-between ml-6 my-1 w-full">
               <div>
-                <p class="font-extrabold sm:text-xs phoneS:text-[11px] text-gray-400 uppercase">${item.category}</p>
+                <p class="font-extrabold sm:text-xs phoneS:text-[10px] text-gray-400 uppercase">${item.category}</p>
                 <p class="font-bold sm:text-lg phoneS:text-base text-main-blue">${item.title}</p>
                 <p class="specification1 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600">${item.specification1}</p>
                 <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600">${item.specification2}</p>
               </div>
               <div>
-                <p class="price font-black sm:text-title phoneM:text-[20px] phoneS:text-[17px] text-main-blue text-right pr-4">${pricePer}</p>
+                <p class="price font-black sm:text-title phoneM:text-xl phoneS:text-lg text-main-blue text-right pr-4">${pricePer}</p>
               </div>
             </div>
           </div>
@@ -323,6 +328,7 @@ function categoryProduct(category, element) {
   displayCategoryProducts();
 
   window.scrollTo(0, 0);
+  categoryMenu();
 }
 function choosedPrice(price, element) {
   let buttons = document.getElementsByClassName("priceB");
@@ -336,6 +342,7 @@ function choosedPrice(price, element) {
   displayCategoryProducts();
 
   window.scrollTo(0, 0);
+  categoryMenu();
 }
 window.onload = document.getElementsByClassName("priceB")[0].classList.add("border-green-500", "text-green-600", "font-medium", "bg-green-100/60", "rounded-r-lg");
 window.onload = document.getElementsByClassName("categoryB")[0].classList.add("border-green-500", "text-green-600", "font-medium");

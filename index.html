@@ -16,6 +16,27 @@
       .show {
         display: block;
       }
+      body {
+        margin: 0px;
+        @media (max-width: 319px) {
+          display: none;
+        }
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px rgb(156, 156, 156);
+        border-radius: 3px;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #9ca1a7;
+        border-radius: 3px;
+      }
     </style>
   </head>
   <body id="body" class="antialiased scroll-smooth">
@@ -64,8 +85,8 @@
         </div>
       </div>
     </nav>
-    <div id="overlay" class="hidden fixed top-[81px] right-0 w-full h-full backdrop-blur-sm dark:bg-main-blue/20 z-[18] transition-all"></div>
-    <div id="sideMenu" class="h-full hidden w-0 fixed top-20 z-20 right-0 px-2 pl-2 bg-white border-solid border-l border-slate-200 overflow-x-hidden transition-all">
+    <div id="overlay" class="fixed top-[81px] right-0 w-0 h-full backdrop-blur-0 dark:bg-main-blue/20 z-[18] transition-all duration-[600ms]"></div>
+    <div id="sideMenu" class="h-full w-0 fixed top-20 z-20 right-0 px-0 bg-white border-solid border-l border-slate-200 overflow-x-hidden transition-all duration-200">
       <div class="flex flex-col py-3 gap-2">
         <div class="flex items-center gap-2 pl-3 py-3 select-none rounded-lg border-solid border bg-slate-50 border-slate-200 cursor-pointer" onclick="scrollToDiv('productsDiv')">
           <img src="img/icons/products.svg" alt="" />
@@ -90,7 +111,7 @@
           <div class="flex flex-col justify-start sm:items-start phoneS:items-center">
             <h1 class="font-display lg:text-5xl md:text-4xl phoneS:text-3xl  text-main-blue font-black uppercase">caserole, farfurii,<br><span class="tracking-wide">pahare, tacâmuri</span></h1>
             <h3 class="mt-2 font-display lg:text-3xl md:text-2xl sm:text-xl phoneS:text-lg text-main-blue font-black">de unică folosință + <span class="bg-white px-3 rounded-3xl">alte produse</span></h3>
-            <p class="sm:max-w-full phoneL:max-w-96 mt-4 text-balance font-display font-medium md:text-lg phoneS:text-[14px] leading-snug text-xs phoneS:items-center sm:text-start phoneS:text-center"><span class="font-bold ">WeLovePacks</span> furnizează materiale de unică folosință la prețuri avantajoase pentru restaurante, catering, pensiuni, fast-food-uri ș.a. dar și persoanelor fizice.</p>
+            <p class="sm:max-w-full phoneS:max-w-96 mt-4 font-display font-medium md:text-lg phoneM:text-sm phoneS:text-xs leading-snug  phoneS:items-center sm:text-start phoneS:text-center"><span class="font-bold ">WeLovePacks</span> furnizează materiale de unică folosință <br> la prețuri avantajoase pentru restaurante, catering,<br> pensiuni, fast-food-uri ș.a. dar și persoanelor fizice.</p>
           </div>
           <div class="flex phoneL:flex-row phoneL:items-center phoneS:flex-col phoneS:items-center sm:gap-10 phoneS:gap-4 mb-16 mt-8">
             <button class="flex items-center justify-center gap-3 w-full h-12 bg-transparent border-solid border-[3px] border-main-blue rounded-xl px-5 py-2 lg:text-lg tracking-wide ring-1 ring-transparent hover:ring-main-blue" onclick="scrollToDiv('aboutDiv')">
@@ -108,7 +129,7 @@
         </div>
        
         <div class="flex items-center justify-center w-full absolute bottom-0 left-0 rounded-b-3xl phoneS:rounded-b-xl bg-main-blue py-3 px-3">
-          <p class="font-context tracking-wide font-normal align-middle text-center text-white lg:text-lg md:text-base sm:text-sm phoneS:text-xs phoneS:text-wrap leading-relaxed">Pentru comenzi mai mari de 500 RON, serviciul de curierat este GRATUIT.</p>
+          <p class="font-context tracking-wide font-normal align-middle text-center text-white lg:text-lg md:text-base sm:text-sm phoneM: phoneS:text-[11px] phoneS:text-wrap leading-relaxed">Pentru comenzi mai mari de 500 RON, serviciul de curierat este GRATUIT.</p>
         </div>
       </div>
     </pre>
@@ -208,7 +229,7 @@
         <div class="mr-10 transition-all ease-in-out duration-400">
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#1C2627] rounded-r-md">
-              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-400">INOVAȚIA:</p>
+              <p class="font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle text-nowrap transition-all ease-in-out duration-400">INOVAȚIA:</p>
             </div>
             <div>
               <p class="font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
@@ -218,7 +239,7 @@
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#333C3D] rounded-r-lg">
-              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-400">CALITATEA:</p>
+              <p class="font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle text-nowrap transition-all ease-in-out duration-400">CALITATEA:</p>
             </div>
             <div>
               <p class="font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
@@ -228,7 +249,7 @@
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#495152] rounded-r-lg">
-              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-400">FIABILITATEA:</p>
+              <p class="font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle text-nowrap transition-all ease-in-out duration-400">FIABILITATEA:</p>
             </div>
             <div>
               <p class="font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">Suntem un partener de încredere, dedicat să livrăm produsele la timp și în condiții perfecte, de fiecare dată.</p>
@@ -236,7 +257,7 @@
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#606768] rounded-r-lg">
-              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-400">ACCESIBILITATEA:</p>
+              <p class="font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle text-nowrap transition-all ease-in-out duration-400">ACCESIBILITATEA:</p>
             </div>
             <div>
               <p class="font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
@@ -246,7 +267,7 @@
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#777D7D] rounded-r-lg">
-              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle transition-all ease-in-out duration-400">SUSTENABILITATEA:</p>
+              <p class="font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle text-nowrap transition-all ease-in-out duration-400">SUSTENABILITATEA:</p>
             </div>
             <div>
               <p class="font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">
@@ -256,7 +277,7 @@
           </div>
           <div class="flex sm:flex-row phoneS:flex-col items-start mt-8">
             <div class="bg-[#8E9393] rounded-r-lg">
-              <p class="uppercase font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle text-nowrap transition-all ease-in-out duration-400">ORIENTAREA CĂTRE CLIENT:</p>
+              <p class="font-display font-bold text-white sm:text-base phoneS:text-sm tracking-wide py-1 pr-2 lg:ml-[88px] sm:ml-[58px] phoneS:ml-8 align-middle text-nowrap transition-all ease-in-out duration-400">ORIENTAREA CĂTRE CLIENT:</p>
             </div>
             <div>
               <p class="font-display font-normal text-main-blue sm:text-base sm:leading-relaxed phoneS:text-sm phoneS:leading-relaxed leading-relaxed pt-1 sm:pl-3 phoneS:pl-7">Ascultăm și înțelegem nevoile clienților noștri, personalizând soluțiile pentru a le satisface cerințele specifice.</p>
@@ -359,7 +380,7 @@
         <div class="flex items-start justify-between">
           <div class="flex items-start sm:gap-10 phoneS:gap-6 mb-12">
             <div>
-              <img class="lg:h-14 phoneS:h-12 phoneM:block phoneS:hidden" src="img/images/logo-white.png" alt="" />
+              <img class="lg:h-14 phoneS:h-12 phoneL:block phoneS:hidden" src="img/images/logo-white.png" alt="" />
             </div>
             <div class="flex flex-col font-display font-light tracking-wide sm:text-sm phoneS:text-xs text-white/80 gap-1">
               <h3 class="font-medium sm:text-base phoneS:text-sm text-white mb-1">Contact</h3>
@@ -372,7 +393,7 @@
           </div>
           <div>
             <a href="https://www.facebook.com/people/We-love-packs/100088191474601" target="_blank" alt="">
-              <img class="sm:h-8 phoneS:h-7" src="img/icons/facebook-white.svg" alt="" />
+              <img class="sm:h-8 phoneS:h-7 phoneL:mr-1 phoneS:mr-6" src="img/icons/facebook-white.svg" alt="" />
             </a>
           </div>
         </div>
