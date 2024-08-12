@@ -34,8 +34,6 @@ function scrollToDiv(object) {
   window.scrollTo({
     top: offsetPosition,
   });
-
-  sideMenu();
 }
 
 let isOpened = false;

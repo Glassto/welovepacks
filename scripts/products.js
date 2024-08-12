@@ -18,8 +18,6 @@ function scrollToDiv(object) {
     top: offsetPosition,
     behavior: "smooth",
   });
-
-  sideMenu();
 }
 function disableFixedCategory() {
   let categoryMenu = document.getElementById("sideCategory");
@@ -328,7 +326,6 @@ function categoryProduct(category, element) {
   displayCategoryProducts();
 
   window.scrollTo(0, 0);
-  categoryMenu();
 }
 function choosedPrice(price, element) {
   let buttons = document.getElementsByClassName("priceB");
@@ -342,7 +339,6 @@ function choosedPrice(price, element) {
   displayCategoryProducts();
 
   window.scrollTo(0, 0);
-  categoryMenu();
 }
 window.onload = document.getElementsByClassName("priceB")[0].classList.add("border-green-500", "text-green-600", "font-medium", "bg-green-100/60", "rounded-r-lg");
 window.onload = document.getElementsByClassName("categoryB")[0].classList.add("border-green-500", "text-green-600", "font-medium");
