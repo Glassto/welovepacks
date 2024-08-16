@@ -232,65 +232,80 @@ function displayProducts() {
 let shoppingCart = [];
 let itemsInCart = 0;
 let numberOfProducts = -1;
+let cartPrice = 0;
 
 function addToCart(index) {
   if (index >= 0 && index < products.length) {
     let item = products[index];
     shoppingCart.push(item);
+    cartPrice += Number(item.price);
     numberOfProducts += 1;
     itemsInCart += 1;
   } else {
     console.log("Nu se poate adăuga produsul");
   }
 
+  document.querySelector(".cart-subtotal").innerHTML = cartPrice;
   document.querySelector(".itemsInCart").innerHTML = itemsInCart;
   displayCart(numberOfProducts, index);
+  deliveryCost();
 }
 function removeFromCart(index) {
   console.log(index);
   if (index >= 0 && index < shoppingCart.length) {
     let item = shoppingCart[index];
     shoppingCart.splice(index, 1); // Elimină produsul din coș
+    cartPrice -= Number(item.price);
     updateCart();
+    deliveryCost();
     numberOfProducts -= 1;
     itemsInCart -= 1;
   } else {
     console.log("Nu se poate elimina produsul");
   }
+
+  document.querySelector(".cart-subtotal").innerHTML = cartPrice;
   document.querySelector(".itemsInCart").innerHTML = itemsInCart;
+}
+function deliveryCost() {
+  if (cartPrice >= 500) {
+    document.querySelector(".delivery-fee").innerHTML = 0;
+  } else {
+    document.querySelector(".delivery-fee").innerHTML = 50;
+  }
 }
 
 function updateCart() {
   let cartOutput = "";
   shoppingCart.forEach((item, index) => {
     cartOutput += `
-      <div class="flex items-start justify-between pt-4 px-2">
+      <div class="flex items-start justify-between mb-2 pt-6 px-2">
       <div class="flex items-start gap-4 flex-nowrap">
         <div>
           <img class="sm:min-w-24 sm:w-24 sm:h-24 phoneS:min-w-16 phoneS:w-16 phoneS:h-16 w-full rounded-lg" src="${item.image}" alt="" />
         </div>
         <div class="grid grid-cols-1 content-between min-h-24">
           <div>
-            <div class="flex items-center gap-5 flex-nowrap">
-              <p class="font-display font-bold sm:text-lg phoneS:text-base text-main-blue">${item.title}</p>
+            <div class="flex items-center gap-5 flex-wrap">
+              <p class="font-display font-bold md:text-lg sm:text-base phoneS:text-15 text-main-blue">${item.title}</p>
               <p class="font-display font-extrabold pt-0.5 px-3 sm:text-xs phoneS:text-[10px] border border-gray-200 rounded-full text-gray-400 uppercase">${item.category}</p>
             </div>
             <div class="divide-x divide-solid divide-gray-200 flex items-center space-x-2">
-              <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600">${item.specification1}</p>
-              <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600 pl-2">${item.specification2}</p>
+              <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90">${item.specification1}</p>
+              <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90 pl-2">${item.specification2}</p>
             </div>
           </div> 
         <div class="flex items-center justify-start">
-          <button class="flex items-center gap-2 py-1 rounded-lg">
+          <button class="flex items-center gap-2 py-1 rounded-lg" onclick="removeFromCart(${index})">
             <img class="w-4 h-4" src="img/icons/delete.svg" alt="" />
-            <p class="md:text-sm sm:text-xs font-semibold text-gray-600 bg-transparent" onclick="removeFromCart(${index})">Elimină</p>
+            <p class="md:text-sm phoneS:text-xs font-semibold text-gray-600 bg-transparent">Elimină</p>
           </button>
         </div>
         </div>
       </div>
       
-      <div class="flex flex-col items-end justify-between flex-nowrap min-h-24 mr-5">
-        <p class="font-display font-extrabold sm:text-xs phoneS:text-[10px] px-3  pt-0.5 bg-gray-100 rounded-full text-gray-700 uppercase">${item.per}</p>
+      <div class="flex flex-row gap-3 items-end justify-center flex-nowrap min-h-24 mr-5">
+        <p class="font-display font-extrabold sm:text-xs phoneS:text-[10px] px-3  pt-0.5 mb-1 bg-gray-100 rounded-full text-gray-700 uppercase">${item.per}</p>
         <p class="font-display font-black sm:text-xl phoneM:text-base phoneS:text-sm text-main-blue">${item.price} RON</p>
       </div>
     </div>
@@ -303,38 +318,37 @@ function updateCart() {
 function displayCart(numberOfProducts) {
   let cartItems = "";
   cartItems += `
-    <div class="flex items-start justify-between pt-4 px-2">
+    <div class="flex items-start justify-between mb-2 pt-6 px-2">
       <div class="flex items-start gap-4 flex-nowrap">
         <div>
           <img class="sm:min-w-24 sm:w-24 sm:h-24 phoneS:min-w-16 phoneS:w-16 phoneS:h-16 w-full rounded-lg" src="${shoppingCart[numberOfProducts].image}" alt="" />
         </div>
         <div class="grid grid-cols-1 content-between min-h-24">
           <div>
-            <div class="flex items-center gap-5 flex-nowrap">
-              <p class="font-display font-bold sm:text-lg phoneS:text-base text-main-blue">${shoppingCart[numberOfProducts].title}</p>
+            <div class="flex items-center sm:gap-5 phoneS:gap-2 flex-nowrap">
+              <p class="font-display font-bold md:text-lg sm:text-base phoneS:text-15 text-main-blue">${shoppingCart[numberOfProducts].title}</p>
               <p class="font-display font-extrabold pt-0.5 px-3 sm:text-xs phoneS:text-[10px] border border-gray-200 rounded-full text-gray-400 uppercase">${shoppingCart[numberOfProducts].category}</p>
             </div>
             <div class="divide-x divide-solid divide-gray-200 flex items-center space-x-2">
-              <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600">${shoppingCart[numberOfProducts].specification1}</p>
-              <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600 pl-2">${shoppingCart[numberOfProducts].specification2}</p>
+              <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90">${shoppingCart[numberOfProducts].specification1}</p>
+              <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90 pl-2">${shoppingCart[numberOfProducts].specification2}</p>
             </div>
           </div> 
-        <div class="flex items-center justify-start">
+        <div class="flex items-center justify-start" onclick="removeFromCart(${numberOfProducts})">
           <button class="flex items-center gap-2 py-1 rounded-lg">
             <img class="w-4 h-4" src="img/icons/delete.svg" alt="" />
-            <p class="md:text-sm sm:text-xs font-semibold text-gray-600 bg-transparent" onclick="removeFromCart(${numberOfProducts})">Elimină</p>
+            <p class="md:text-sm phoneS:text-xs font-semibold text-gray-600 bg-transparent">Elimină</p>
           </button>
         </div>
         </div>
       </div>
       
-      <div class="flex flex-col items-end justify-between flex-nowrap min-h-24 mr-5">
-        <p class="font-display font-extrabold sm:text-xs phoneS:text-[10px] px-3  pt-0.5 bg-gray-100 rounded-full text-gray-700 uppercase">${shoppingCart[numberOfProducts].per}</p>
-        <p class="font-display font-black sm:text-xl phoneM:text-base phoneS:text-sm text-main-blue">${shoppingCart[numberOfProducts].price} RON</p>
+      <div class="flex flex-row gap-3 items-end justify-center flex-nowrap min-h-24 mr-5">
+        <p class="font-display font-extrabold sm:text-xs phoneS:text-[10px] px-3  pt-0.5 mb-1 bg-gray-100 rounded-full text-gray-700 uppercase">${shoppingCart[numberOfProducts].per}</p>
+        <p class="font-display font-black sm:text-xl phoneM:text-base phoneS:text-sm text-main-blue">${shoppingCart[numberOfProducts].price} <span class="text-gray-500"> RON</span></p>
       </div>
     </div>
   `;
-  console.log(shoppingCart[numberOfProducts].title);
   document.querySelector(".cartMenu").innerHTML += cartItems;
 }
 
@@ -357,9 +371,9 @@ function displayCategoryProducts() {
             <div class="flex flex-col justify-between ml-6 mt-1 w-full">
               <div>
                 <p class="font-extrabold sm:text-xs phoneS:text-[10px] text-gray-400 uppercase">${item.category}</p>
-                <p class="font-bold sm:text-lg phoneS:text-base text-main-blue">${item.title}</p>
-                <p class="specification1 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600">${item.specification1}</p>
-                <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600">${item.specification2}</p>
+                <p class="font-bold md:text-lg sm:text-base phoneS:text-15 text-main-blue">${item.title}</p>
+                <p class="specification1 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90">${item.specification1}</p>
+                <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90">${item.specification2}</p>
               </div>
               <div class="">
                 <p class="price font-black sm:text-xl phoneM:text-base phoneS:text-sm text-main-blue text-right sm:pr-2">${pricePer}</p>
@@ -385,10 +399,10 @@ function displayCategoryProducts() {
               <img class="h-full w-full rounded-lg" src="${item.image}" alt="${item.image}">
             </div>
             <div class="flex flex-col justify-between ml-2 mt-2 h-full">
-              <div>
-                <p class="font-bold sm:text-lg phoneS:text-base ">${item.title}</p>
-                <p class="specification1 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-[15px] text-gray-600">${item.specification1}</p>
-                <p class="specification2 mb-4 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-[15px] text-gray-600">${item.specification2}</p>
+              <div class="mb-4">
+                <p class="font-bold sm:text-lg phoneS:text-base">${item.title}</p>
+                <p class="specification1 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-[15px] text-gray-600/90">${item.specification1}</p>
+                <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-[15px] text-gray-600/90">${item.specification2}</p>
               </div>
               <div class="">
                 <p class="price font-black sm:text-title phoneM:text-[20px] phoneS:text-[17px] text-right pr-2">${pricePer}</p>
