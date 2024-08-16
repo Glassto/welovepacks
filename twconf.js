@@ -1,6 +1,10 @@
 tailwind.config = {
   theme: {
     extend: {
+      spacing: {
+        22: "5.5rem",
+        1.25: "0.3125rem",
+      },
       minWidth: {
         7.5: "1.875rem",
         50: "12.5rem",
