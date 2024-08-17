@@ -216,62 +216,92 @@ function displayProducts() {
   }
 }
 
-// input = document.querySelector(".productQuantity");
-// input.value = 1;
-// productQuantityValue = Number(input.value);
-// function changeProductQuantity(operation) {
-//   if (operation === "add") {
-//     productQuantityValue++;
-//     input.value = productQuantityValue;
-//   } else if (operation !== "add" && productQuantityValue > 1) {
-//     productQuantityValue--;
-//     input.value = productQuantityValue;
-//   }
-// }
-
 let shoppingCart = [];
 let itemsInCart = 0;
 let numberOfProducts = -1;
 let cartPrice = 0;
+let deliveryFee = 0;
+let totalSum = 0;
 
 function addToCart(index) {
+  let cartPriceWindow = document.getElementById("cartPriceWindow");
+  let cartButtons = document.getElementById("cartButtons");
+  let cartEmptyMessage = document.getElementById("cartEmptyMessage");
+
   if (index >= 0 && index < products.length) {
     let item = products[index];
     shoppingCart.push(item);
     cartPrice += Number(item.price);
+    totalSum = cartPrice + deliveryFee;
     numberOfProducts += 1;
     itemsInCart += 1;
+
+    if (cartPrice > 0) {
+      cartEmptyMessage.classList.add("hidden");
+      cartPriceWindow.classList.add("flex");
+      cartButtons.classList.add("flex");
+      cartPriceWindow.classList.remove("hidden");
+      cartButtons.classList.remove("hidden");
+    } else {
+      cartEmptyMessage.classList.remove("hidden");
+      cartEmptyMessage.classList.add("block");
+      cartPriceWindow.classList.add("hidden");
+      cartButtons.classList.add("hidden");
+    }
   } else {
     console.log("Nu se poate adăuga produsul");
   }
 
   document.querySelector(".cart-subtotal").innerHTML = cartPrice;
+  document.querySelector(".cart-total").innerHTML = totalSum;
   document.querySelector(".itemsInCart").innerHTML = itemsInCart;
   displayCart(numberOfProducts, index);
   deliveryCost();
 }
+
 function removeFromCart(index) {
+  let cartPriceWindow = document.getElementById("cartPriceWindow");
+  let cartButtons = document.getElementById("cartButtons");
+  let cartEmptyMessage = document.getElementById("cartEmptyMessage");
+
   console.log(index);
   if (index >= 0 && index < shoppingCart.length) {
     let item = shoppingCart[index];
     shoppingCart.splice(index, 1); // Elimină produsul din coș
     cartPrice -= Number(item.price);
+    totalSum = cartPrice + deliveryFee;
     updateCart();
     deliveryCost();
     numberOfProducts -= 1;
     itemsInCart -= 1;
+
+    if (cartPrice > 0) {
+      cartEmptyMessage.classList.add("hidden");
+      cartPriceWindow.classList.add("flex");
+      cartButtons.classList.add("flex");
+      cartPriceWindow.classList.remove("hidden");
+      cartButtons.classList.remove("hidden");
+    } else {
+      cartEmptyMessage.classList.remove("hidden");
+      cartEmptyMessage.classList.add("flex");
+      cartPriceWindow.classList.add("hidden");
+      cartButtons.classList.add("hidden");
+    }
   } else {
     console.log("Nu se poate elimina produsul");
   }
 
   document.querySelector(".cart-subtotal").innerHTML = cartPrice;
+  document.querySelector(".cart-total").innerHTML = totalSum;
   document.querySelector(".itemsInCart").innerHTML = itemsInCart;
 }
 function deliveryCost() {
   if (cartPrice >= 500) {
-    document.querySelector(".delivery-fee").innerHTML = 0;
+    deliveryFee = 0;
+    document.querySelector(".delivery-fee").innerHTML = deliveryFee;
   } else {
-    document.querySelector(".delivery-fee").innerHTML = 50;
+    deliveryFee = 50;
+    document.querySelector(".delivery-fee").innerHTML = deliveryFee;
   }
 }
 
@@ -279,36 +309,36 @@ function updateCart() {
   let cartOutput = "";
   shoppingCart.forEach((item, index) => {
     cartOutput += `
-      <div class="flex items-start justify-between mb-2 pt-6 px-2">
-      <div class="flex items-start gap-4 flex-nowrap">
-        <div>
-          <img class="sm:min-w-24 sm:w-24 sm:h-24 phoneS:min-w-16 phoneS:w-16 phoneS:h-16 w-full rounded-lg" src="${item.image}" alt="" />
+      <div>
+        <div class="flex items-start justify-between mb-2 pt-6 px-2">
+          <div class="flex items-start gap-4 flex-nowrap">
+            <div>
+              <img class="sm:min-w-24 sm:w-24 sm:h-24 phoneS:min-w-16 phoneS:w-16 phoneS:h-16 w-full rounded-lg" src="${item.image}" alt="" />
+            </div>
+            <div class="grid grid-cols-1 content-between min-h-24 w-full">
+              <div>
+                <div class="flex items-center gap-5 flex-wrap">
+                  <p class="font-display font-bold md:text-lg sm:text-base phoneS:text-15 text-main-blue">${item.title}</p>
+                </div>
+                <div class="divide-x divide-solid divide-gray-200 flex items-center space-x-2">
+                  <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90">${item.specification1}</p>
+                  <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90 pl-2">${item.specification2}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="grid grid-cols-1 content-between min-h-24">
-          <div>
-            <div class="flex items-center gap-5 flex-wrap">
-              <p class="font-display font-bold md:text-lg sm:text-base phoneS:text-15 text-main-blue">${item.title}</p>
-              <p class="font-display font-extrabold pt-0.5 px-3 sm:text-xs phoneS:text-[10px] border border-gray-200 rounded-full text-gray-400 uppercase">${item.category}</p>
-            </div>
-            <div class="divide-x divide-solid divide-gray-200 flex items-center space-x-2">
-              <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90">${item.specification1}</p>
-              <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90 pl-2">${item.specification2}</p>
-            </div>
-          </div> 
-        <div class="flex items-center justify-start">
-          <button class="flex items-center gap-2 py-1 rounded-lg" onclick="removeFromCart(${index})">
+        <div class="flex items-center justify-between">
+          <button class="flex items-center gap-2 sm:ml-30 phoneS:ml-22 py-1 rounded-lg" onclick="removeFromCart(${index})">
             <img class="w-4 h-4" src="img/icons/delete.svg" alt="" />
             <p class="md:text-sm phoneS:text-xs font-semibold text-gray-600 bg-transparent">Elimină</p>
           </button>
-        </div>
+          <div class="flex flex-row items-center gap-3 mr-3">
+            <p class="font-display font-extrabold sm:text-xs phoneS:text-[10px] px-3 pt-0.5 bg-gray-100 rounded-full text-gray-700 uppercase">${item.per}</p>
+            <p class="font-display font-black sm:text-xl phoneM:text-base phoneS:text-sm text-main-blue">${item.price} RON</p>
+          </div>
         </div>
       </div>
-      
-      <div class="flex flex-row gap-3 items-end justify-center flex-nowrap min-h-24 mr-5">
-        <p class="font-display font-extrabold sm:text-xs phoneS:text-[10px] px-3  pt-0.5 mb-1 bg-gray-100 rounded-full text-gray-700 uppercase">${item.per}</p>
-        <p class="font-display font-black sm:text-xl phoneM:text-base phoneS:text-sm text-main-blue">${item.price} RON</p>
-      </div>
-    </div>
     `;
   });
 
@@ -318,34 +348,34 @@ function updateCart() {
 function displayCart(numberOfProducts) {
   let cartItems = "";
   cartItems += `
-    <div class="flex items-start justify-between mb-2 pt-6 px-2">
-      <div class="flex items-start gap-4 flex-nowrap">
-        <div>
-          <img class="sm:min-w-24 sm:w-24 sm:h-24 phoneS:min-w-16 phoneS:w-16 phoneS:h-16 w-full rounded-lg" src="${shoppingCart[numberOfProducts].image}" alt="" />
-        </div>
-        <div class="grid grid-cols-1 content-between min-h-24">
+    <div>
+      <div class="flex items-start justify-between mb-2 pt-6 px-2">
+        <div class="flex items-start gap-4 flex-nowrap">
           <div>
-            <div class="flex items-center sm:gap-5 phoneS:gap-2 flex-nowrap">
-              <p class="font-display font-bold md:text-lg sm:text-base phoneS:text-15 text-main-blue">${shoppingCart[numberOfProducts].title}</p>
-              <p class="font-display font-extrabold pt-0.5 px-3 sm:text-xs phoneS:text-[10px] border border-gray-200 rounded-full text-gray-400 uppercase">${shoppingCart[numberOfProducts].category}</p>
+            <img class="sm:min-w-24 sm:w-24 sm:h-24 phoneS:min-w-16 phoneS:w-16 phoneS:h-16 w-full rounded-lg" src="${shoppingCart[numberOfProducts].image}" alt="" />
+          </div>
+          <div>
+            <div>
+              <div class="flex items-center sm:gap-5 phoneS:gap-1 flex-wrap">
+                <p class="font-display font-bold md:text-lg sm:text-base phoneS:text-15 text-main-blue">${shoppingCart[numberOfProducts].title}</p>
+              </div>
+              <div class="divide-x divide-solid divide-gray-200 flex items-center space-x-2">
+                <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90">${shoppingCart[numberOfProducts].specification1}</p>
+                <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90 pl-2">${shoppingCart[numberOfProducts].specification2}</p>
+              </div>
             </div>
-            <div class="divide-x divide-solid divide-gray-200 flex items-center space-x-2">
-              <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90">${shoppingCart[numberOfProducts].specification1}</p>
-              <p class="specification2 font-context font-medium lg:text-[15px] phoneS:text-[13px] text-gray-600/90 pl-2">${shoppingCart[numberOfProducts].specification2}</p>
-            </div>
-          </div> 
-        <div class="flex items-center justify-start" onclick="removeFromCart(${numberOfProducts})">
-          <button class="flex items-center gap-2 py-1 rounded-lg">
-            <img class="w-4 h-4" src="img/icons/delete.svg" alt="" />
-            <p class="md:text-sm phoneS:text-xs font-semibold text-gray-600 bg-transparent">Elimină</p>
-          </button>
-        </div>
+          </div>
         </div>
       </div>
-      
-      <div class="flex flex-row gap-3 items-end justify-center flex-nowrap min-h-24 mr-5">
-        <p class="font-display font-extrabold sm:text-xs phoneS:text-[10px] px-3  pt-0.5 mb-1 bg-gray-100 rounded-full text-gray-700 uppercase">${shoppingCart[numberOfProducts].per}</p>
-        <p class="font-display font-black sm:text-xl phoneM:text-base phoneS:text-sm text-main-blue">${shoppingCart[numberOfProducts].price} <span class="text-gray-500"> RON</span></p>
+      <div class="flex items-center justify-between">
+        <button class="flex items-center gap-2 sm:ml-30 phoneS:ml-22 py-1 rounded-lg" onclick="removeFromCart(${numberOfProducts})">
+          <img class="w-4 h-4" src="img/icons/delete.svg" alt="" />
+          <p class="md:text-sm phoneS:text-xs font-semibold text-gray-600 bg-transparent">Elimină</p>
+        </button>
+        <div class="flex flex-row items-center gap-3 mr-3">
+          <p class="font-display font-extrabold sm:text-xs phoneS:text-[10px] px-3 pt-0.5 bg-gray-100 rounded-full text-gray-700 uppercase">${shoppingCart[numberOfProducts].per}</p>
+          <p class="font-display font-black sm:text-xl phoneM:text-base phoneS:text-sm text-main-blue">${shoppingCart[numberOfProducts].price} <span class="text-gray-500"> RON</span></p>
+        </div>
       </div>
     </div>
   `;

@@ -1,7 +1,13 @@
 tailwind.config = {
   theme: {
     extend: {
+      padding: ["last"],
       spacing: {
+        "6/7": "86%",
+        94: "23.5rem",
+        90: "22.5rem",
+        74: "18.5rem",
+        30: "7.5rem",
         22: "5.5rem",
         1.25: "0.3125rem",
       },
