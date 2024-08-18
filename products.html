@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://js.stripe.com/v3/"></script>
     <script src="./twconf.js"></script>
     <script src="./scripts/products.js" defer></script>
+    <script src="./scripts/cart.js" defer></script>
     <link href="./src/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -201,8 +203,8 @@
           </div>
         </div>
         <div id="cartButtons" class="hidden items-center gap-3 phoneL:pb-4 phoneS:pb-2 px-5">
-          <button class="flex items-center justify-center gap-3 w-full h-12 bg-white border-none rounded-xl px-5 py-2 font-display font-bold lg:text-lg phoneL:text-base phoneS:text-sm text-main-blue tracking-wide">Înapoi</button>
-          <button class="flex items-center justify-center gap-3 w-full h-12 bg-main-blue border-none rounded-xl px-5 py-2 font-display font-bold lg:text-lg phoneL:text-base phoneS:text-sm text-white tracking-wide">Comandă</button>
+          <button class="flex items-center justify-center gap-3 w-full h-12 bg-white border-none rounded-xl px-5 py-2 font-display font-bold lg:text-lg phoneL:text-base phoneS:text-sm text-main-blue tracking-wide" onclick="openCartMenu()">Înapoi</button>
+          <button class="flex items-center justify-center gap-3 w-full h-12 bg-main-blue border-none rounded-xl px-5 py-2 font-display font-bold lg:text-lg phoneL:text-base phoneS:text-sm text-white tracking-wide" onclick="buyItem()">Comandă</button>
         </div>
       </div>
     </div>

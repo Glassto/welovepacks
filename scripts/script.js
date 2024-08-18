@@ -65,7 +65,7 @@ function displayProducts(maxProductsToDisplay) {
   if (_activeListStyle.innerText === "List") {
     for (let i = 0; i < maxProductsToDisplay; i++) {
       let item = products[i];
-      let pricePer = `${item.price} RON <span class="sm:text-base phoneM:text-sm phoneS:text-xs text-gray-500 tracking-wide"> / ${item.per}</span>`;
+      let pricePer = `${item.cost} RON <span class="sm:text-base phoneM:text-sm phoneS:text-xs text-gray-500 tracking-wide"> / ${item.per}</span>`;
       output += `
           <div class="product flex bg-slate-50 border border-solid border-slate-200 hover:border-slate-400/40 hover:shadow-sm rounded-xl p-3">
             <div>
@@ -90,7 +90,7 @@ function displayProducts(maxProductsToDisplay) {
   } else {
     for (let i = 0; i < maxProductsToDisplay; i++) {
       let item = products[i];
-      let pricePer = `${item.price} RON <span class="text-base sm:text-base phoneM:text-sm phoneS:text-xs text-gray-500 tracking-wide"> / ${item.per}</span>`;
+      let pricePer = `${item.cost} RON <span class="text-base sm:text-base phoneM:text-sm phoneS:text-xs text-gray-500 tracking-wide"> / ${item.per}</span>`;
       output += `
         <div class="product flex flex-col bg-slate-50 border border-solid border-slate-200 hover:border-slate-300 rounded-xl p-3">
           <div>

@@ -5,8 +5,9 @@
     "title": "Sacoșă hârtie cu mâner",
     "specification1": "Dimensiune: 28/29/17 cm",
     "specification2": "",
-    "price": 0.50,
-    "per": "buc"
+    "cost": 0.50,
+    "per": "buc",
+    "price": "price_1Pp9qjRt0dowyNS86CPtnblF"
   },
   {
     "image": "img/images/products/manusi-negre-nitril.png",
@@ -14,8 +15,9 @@
     "title": "Mănuși negre nitril",
     "specification1": "Dimensiune: M",
     "specification2": "",
-    "price": 18,
-    "per": "100 buc"
+    "cost": 18,
+    "per": "100 buc",
+    "price": "price_1Pp9ssRt0dowyNS8dtmP3ok3"
   },
   {
     "image": "img/images/products/pungi-alimentare.png",
@@ -23,8 +25,9 @@
     "title": "Pungi alimentare",
     "specification1": "Capacitate: 2kg",
     "specification2": "1 rolă = 350 buc",
-    "price": 8,
-    "per": "rolă"
+    "cost": 8,
+    "per": "rolă",
+    "price": "price_1Pp9ucRt0dowyNS8sgoTFire"
   },
   {
     "image": "img/images/products/saci-menajeri-galbeni.png",
@@ -32,7 +35,7 @@
     "title": "Saci menajeri galbeni",
     "specification1": "Volum: 240L",
     "specification2": "1 rolă = 10 buc",
-    "price": 9,
+    "cost": 9,
     "per": "rolă"
   },
   {
@@ -41,7 +44,7 @@
     "title": "Saci menajeri galbeni HDPE",
     "specification1": "Volum: 60L",
     "specification2": "1 rolă = 20 buc",
-    "price": 6,
+    "cost": 6,
     "per": "rolă"
   },
   {
@@ -50,7 +53,7 @@
     "title": "Șervețele albe",
     "specification1": "Dimensiune: 33/33 cm",
     "specification2": "Grosime: 1 strat",
-    "price": 4,
+    "cost": 4,
     "per": "80 buc"
   },
   {
@@ -59,7 +62,7 @@
     "title": "Șervețele albe",
     "specification1": "Dimensiune: 25/25 cm",
     "specification2": "Grosime: 1 strat",
-    "price": 1.5,
+    "cost": 1.5,
     "per": "40 buc"
   },
   {
@@ -68,7 +71,7 @@
     "title": "Paie negre flexibile din PP ambalate individual",
     "specification1": "",
     "specification2": "",
-    "price": 35,
+    "cost": 35,
     "per": "1000 buc"
   },
   {
@@ -77,7 +80,7 @@
     "title": "Scobitori lemn ambalate individual",
     "specification1": "",
     "specification2": "",
-    "price": 6,
+    "cost": 6,
     "per": "1000 buc"
   },
   {
@@ -86,7 +89,7 @@
     "title": "Bețe pentru frigărui",
     "specification1": "Dimensiune: 25 cm",
     "specification2": "",
-    "price": 3,
+    "cost": 3,
     "per": "100 buc"
   },
   {
@@ -95,7 +98,7 @@
     "title": "Sosieră PET cu capac atașat",
     "specification1": "Capacitate: 80ml",
     "specification2": "",
-    "price": 10,
+    "cost": 10,
     "per": "100 buc"
   },
   {
@@ -104,7 +107,7 @@
     "title": "Sosieră PET cu capac atașat",
     "specification1": "Capacitate: 50ml",
     "specification2": "",
-    "price": 9,
+    "cost": 9,
     "per": "100 buc"
   },
   {
@@ -113,7 +116,7 @@
     "title": "Cutie pizza kraft",
     "specification1": "Dimensiune: 40/40 cm",
     "specification2": "",
-    "price": 70,
+    "cost": 70,
     "per": "50 buc"
   },
   {
@@ -122,7 +125,7 @@
     "title": "Cutie pizza kraft",
     "specification1": "Dimensiune: 32/32 cm",
     "specification2": "",
-    "price": 77,
+    "cost": 77,
     "per": "100 buc"
   },
   {
@@ -131,7 +134,7 @@
     "title": "Cutie pizza kraft",
     "specification1": "Dimensiune: 28/28 cm",
     "specification2": "",
-    "price": 75,
+    "cost": 75,
     "per": "100 buc"
   },
   {
@@ -140,7 +143,7 @@
     "title": "Cutie pizza albă",
     "specification1": "Dimensiune: 25/25 cm",
     "specification2": "",
-    "price": 70,
+    "cost": 70,
     "per": "100 buc"
   },
   {
@@ -149,7 +152,7 @@
     "title": "Hârtie de copt",
     "specification1": "Dimensiune: 37/50 cm",
     "specification2": "",
-    "price": 32,
+    "cost": 32,
     "per": "rolă"
   },
   {
@@ -158,7 +161,7 @@
     "title": "Folie alimentară",
     "specification1": "Dimensiune: 45 cm",
     "specification2": "Greutate: 984 gr",
-    "price": 28,
+    "cost": 28,
     "per": "rolă"
   },
   {
@@ -167,7 +170,7 @@
     "title": "Folie alimentară",
     "specification1": "Dimensiune: 30 cm",
     "specification2": "Greutate: 640 gr",
-    "price": 15,
+    "cost": 15,
     "per": "rolă"
   },
   {
@@ -176,7 +179,7 @@
     "title": "Folie aluminiu",
     "specification1": "Dimensiune: 45 cm",
     "specification2": "Greutate: 900 gr",
-    "price": 30,
+    "cost": 30,
     "per": "rolă"
   },
   {
@@ -185,7 +188,7 @@
     "title": "Folie aluminiu",
     "specification1": "Dimensiune: 30 cm",
     "specification2": "Greutate: 700 gr",
-    "price": 22,
+    "cost": 22,
     "per": "rolă"
   },
   {
@@ -194,7 +197,7 @@
     "title": "Pahare carton",
     "specification1": "Volum: 118 ml",
     "specification2": "",
-    "price": 5,
+    "cost": 5,
     "per": "50 buc"
   },
   {
@@ -203,7 +206,7 @@
     "title": "Pahare carton",
     "specification1": "Volum: 200 ml",
     "specification2": "",
-    "price": 7,
+    "cost": 7,
     "per": "50 buc"
   },
   {
@@ -212,7 +215,7 @@
     "title": "Pahar transparent frappe",
     "specification1": "Volum: 250 ml",
     "specification2": "",
-    "price": 5,
+    "cost": 5,
     "per": "50 buc"
   },
   {
@@ -221,7 +224,7 @@
     "title": "Pahar transparent frappe",
     "specification1": "Volum: 400 ml",
     "specification2": "",
-    "price": 10,
+    "cost": 10,
     "per": "50 buc"
   },
   {
@@ -230,7 +233,7 @@
     "title": "Pahar biodegradabil",
     "specification1": "Volum: 260 ml",
     "specification2": "",
-    "price": 20,
+    "cost": 20,
     "per": "50 buc"
   },
   {
@@ -239,7 +242,7 @@
     "title": "Pahar biodegradabil",
     "specification1": "Volum: 450 ml",
     "specification2": "",
-    "price": 30,
+    "cost": 30,
     "per": "50 buc"
   },
   {
@@ -248,7 +251,7 @@
     "title": "Capac bombat frappe cu orificiu pentru pai",
     "specification1": "",
     "specification2": "",
-    "price": 12,
+    "cost": 12,
     "per": "100 buc"
   },
   {
@@ -257,7 +260,7 @@
     "title": "Set: lingurițe PLA lux transparente",
     "specification1": "",
     "specification2": "",
-    "price": 6.5,
+    "cost": 6.5,
     "per": "50 buc"
   },
   {
@@ -266,7 +269,7 @@
     "title": "Set: linguri PLA reutilizabile",
     "specification1": "",
     "specification2": "",
-    "price": 3,
+    "cost": 3,
     "per": "10 buc"
   },
   {
@@ -275,7 +278,7 @@
     "title": "Set: furculițe PLA reutilizabile",
     "specification1": "",
     "specification2": "",
-    "price": 3,
+    "cost": 3,
     "per": "10 buc"
   },
   {
@@ -284,7 +287,7 @@
     "title": "Set: cuțite PLA reutilizabile",
     "specification1": "",
     "specification2": "",
-    "price": 3,
+    "cost": 3,
     "per": "10 buc"
   },
   {
@@ -293,7 +296,7 @@
     "title": "Set: lingură PP + șervețel",
     "specification1": "",
     "specification2": "",
-    "price": 17,
+    "cost": 17,
     "per": "100 buc"
   },
   {
@@ -302,7 +305,7 @@
     "title": "Set: lingură transparentă PP + șervețel",
     "specification1": "",
     "specification2": "",
-    "price": 17,
+    "cost": 17,
     "per": "100 buc"
   },
   {
@@ -311,7 +314,7 @@
     "title": "Set: furculiță transparentă PP + șervețel",
     "specification1": "",
     "specification2": "",
-    "price": 18,
+    "cost": 18,
     "per": "100 buc"
   },
   {
@@ -320,7 +323,7 @@
     "title": "Set: furculiță + cuțit transparente PP + șervețel",
     "specification1": "",
     "specification2": "",
-    "price": 22,
+    "cost": 22,
     "per": "100 buc"
   },
   {
@@ -329,7 +332,7 @@
     "title": "Set: furculiță + cuțit albe PLA + șervețel",
     "specification1": "",
     "specification2": "",
-    "price": 22,
+    "cost": 22,
     "per": "100 buc"
   },
   {
@@ -338,7 +341,7 @@
     "title": "Set: lingură + furculiță + cuțit transparente PP + șervețel",
     "specification1": "",
     "specification2": "",
-    "price": 30,
+    "cost": 30,
     "per": "100 buc"
   },
   {
@@ -347,7 +350,7 @@
     "title": "Platou plastic negru cu capac transparent",
     "specification1": "Dimensiune: 35 cm",
     "specification2": "",
-    "price": 40,
+    "cost": 40,
     "per": "10 buc"
   },
   {
@@ -356,7 +359,7 @@
     "title": "Platou plastic negru cu capac transparent",
     "specification1": "Dimensiune: 45 cm",
     "specification2": "",
-    "price": 59,
+    "cost": 59,
     "per": "10 buc"
   },
   {
@@ -365,7 +368,7 @@
     "title": "Platou aluminiu",
     "specification1": "Dimensiune: 252/180 mm",
     "specification2": "",
-    "price": 9,
+    "cost": 9,
     "per": "10 buc"
   },
   {
@@ -374,7 +377,7 @@
     "title": "Platou aluminiu",
     "specification1": "Dimensiune: 350/250 mm",
     "specification2": "",
-    "price": 12.5,
+    "cost": 12.5,
     "per": "10 buc"
   },
   {
@@ -383,7 +386,7 @@
     "title": "Platou aluminiu",
     "specification1": "Dimensiune: 540/362 mm",
     "specification2": "",
-    "price": 57,
+    "cost": 57,
     "per": "10 buc"
   },
   {
@@ -392,7 +395,7 @@
     "title": "Farfurie plastic",
     "specification1": "Dimensiune: 21/21 cm",
     "specification2": "",
-    "price": 9,
+    "cost": 9,
     "per": "50 buc"
   },
   {
@@ -401,7 +404,7 @@
     "title": "Farfurie biodegradabilă",
     "specification1": "Dimensiune: 18/18 cm",
     "specification2": "",
-    "price": 15,
+    "cost": 15,
     "per": "50 buc"
   },
   {
@@ -410,7 +413,7 @@
     "title": "Farfurie biodegradabilă",
     "specification1": "Dimensiune: 26/26 cm",
     "specification2": "",
-    "price": 29,
+    "cost": 29,
     "per": "50 buc"
   },
   {
@@ -419,7 +422,7 @@
     "title": "Farfurie biodegradabilă 3 compartimente",
     "specification1": "Dimensiune: 26/26 cm",
     "specification2": "",
-    "price": 29,
+    "cost": 29,
     "per": "50 buc"
   },
   {
@@ -428,7 +431,7 @@
     "title": "Farfurie ovală biodegradabilă",
     "specification1": "Dimensiune: 26/26 cm",
     "specification2": "",
-    "price": 22,
+    "cost": 22,
     "per": "50 buc"
   },
   {
@@ -437,7 +440,7 @@
     "title": "Farfurie ovală biodegradabilă",
     "specification1": "Dimensiune: 32/32 cm",
     "specification2": "",
-    "price": 35,
+    "cost": 35,
     "per": "50 buc"
   },
   {
@@ -446,7 +449,250 @@
     "title": "Farfurie pătrată biodegradabilă",
     "specification1": "Dimensiune: 32/32 cm",
     "specification2": "",
-    "price": 35,
+    "cost": 35,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/bol-supa-bio-500ml.png",
+    "category": "Boluri",
+    "title": "Bol supă biodegradabil",
+    "specification1": "Volum: 500 ml",
+    "specification2": "",
+    "cost": 23,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/bol-supa-kraft-carton-500ml.png",
+    "category": "Boluri",
+    "title": "Bol supă maro cu capac transparent",
+    "specification1": "Volum: 500 ml",
+    "specification2": "",
+    "cost": 30,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/bol-supa-carton-475ml.png",
+    "category": "Boluri",
+    "title": "Bol supă carton SOUP TIME cu capac transparent",
+    "specification1": "Volum: 475 ml",
+    "specification2": "",
+    "cost": 25,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/bol-supa-negru-475ml.png",
+    "category": "Boluri",
+    "title": "Bol supă negru cu capac transparent",
+    "specification1": "Volum: 475 ml",
+    "specification2": "",
+    "cost": 27,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/bol-supa-negru-680ml.png",
+    "category": "Boluri",
+    "title": "Bol supă negru cu capac transparent",
+    "specification1": "Volum: 680 ml",
+    "specification2": "",
+    "cost": 36,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/caserola-hamburger-bio-450ml.png",
+    "category": "Caserole",
+    "title": "Caserolă hamburger biodegradabilă cu capac",
+    "specification1": "Volum: 450 ml",
+    "specification2": "",
+    "cost": 32,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/caserola-bio-1compartiment.png",
+    "category": "Caserole",
+    "title": "Caserolă biodegradabilă cu capac",
+    "specification1": "Compartimente: 1",
+    "specification2": "",
+    "cost": 36,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/caserola-bio-2compartimente.png",
+    "category": "Caserole",
+    "title": "Caserolă biodegradabilă cu capac",
+    "specification1": "Compartimente: 2",
+    "specification2": "",
+    "cost": 42,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/caserola-bio-3compartimente.png",
+    "category": "Caserole",
+    "title": "Caserolă biodegradabilă cu capac",
+    "specification1": "Compartimente: 3",
+    "specification2": "",
+    "cost": 44,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/caserola-polistiren-dreptunghiulara-1compartiment.png",
+    "category": "Caserole",
+    "title": "Caserolă polistiren cu capac",
+    "specification1": "Compartimente: 1",
+    "specification2": "Dimensiune: 240/149/73 cm",
+    "cost": 35,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-polistiren-1compartiment.png",
+    "category": "Caserole",
+    "title": "Caserolă polistiren cu capac",
+    "specification1": "Compartimente: 1",
+    "specification2": "",
+    "cost": 40,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-polistiren-2compartimente.png",
+    "category": "Caserole",
+    "title": "Caserolă polistiren cu capac",
+    "specification1": "Compartimente: 2",
+    "specification2": "",
+    "cost": 40,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-polistiren-3compartimente.png",
+    "category": "Caserole",
+    "title": "Caserolă polistiren cu capac",
+    "specification1": "Compartimente: 3",
+    "specification2": "",
+    "cost": 40,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-transparenta-150ml.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă cu capac",
+    "specification1": "Volum: 150 ml",
+    "specification2": "",
+    "cost": 13,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-transparenta-150ml-premium.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă PREMIUM cu capac",
+    "specification1": "Volum: 150 ml",
+    "specification2": "",
+    "cost": 15,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-transparenta-250ml.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă cu capac",
+    "specification1": "Volum: 250 ml",
+    "specification2": "",
+    "cost": 17,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-transparenta-250ml-premium.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă PREMIUM cu capac",
+    "specification1": "Volum: 250 ml",
+    "specification2": "",
+    "cost": 19,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-transparenta-375ml.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă cu capac",
+    "specification1": "Volum: 375 ml",
+    "specification2": "",
+    "cost": 17,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-transparenta-500ml.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă cu capac",
+    "specification1": "Volum: 500 ml",
+    "specification2": "",
+    "cost": 18,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-transparenta-500ml-premium.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă PREMIUM cu capac",
+    "specification1": "Volum: 500 ml",
+    "specification2": "",
+    "cost": 25,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-transparenta-capac-inalt-500ml.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă cu capac înalt",
+    "specification1": "Volum: 500 ml",
+    "specification2": "",
+    "cost": 28,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-transparenta-1000ml.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă cu capac",
+    "specification1": "Volum: 1000 ml",
+    "specification2": "",
+    "cost": 29,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-transparenta-1000ml-premium.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă PREMIUM cu capac",
+    "specification1": "Volum: 1000 ml",
+    "specification2": "",
+    "cost": 37,
+    "per": "100 buc"
+  },
+  {
+    "image": "img/images/products/caserola-neagra-pp-750ml.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă PREMIUM cu capac",
+    "specification1": "Volum: 1000 ml",
+    "specification2": "",
+    "cost": 50,
+    "per": "35 buc"
+  },
+  {
+    "image": "img/images/products/caserola-neagra-salate-750ml.png",
+    "category": "Caserole",
+    "title": "Caserolă neagră cu capac",
+    "specification1": "Volum: 750 ml",
+    "specification2": "",
+    "cost": 50,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/caserola-transparenta-diamond-500ml.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă DIAMOND cu capac",
+    "specification1": "Volum: 500 ml",
+    "specification2": "",
+    "cost": 35,
+    "per": "50 buc"
+  },
+  {
+    "image": "img/images/products/caserola-transparenta-diamond-750ml.png",
+    "category": "Caserole",
+    "title": "Caserolă PET transparentă DIAMOND cu capac",
+    "specification1": "Volum: 750 ml",
+    "specification2": "",
+    "cost": 40,
     "per": "50 buc"
   }
 ]
