@@ -8,8 +8,8 @@ function buyItem() {
     shippingAddressCollection: {
       allowedCountries: ["RO"],
     },
-    successUrl: "https://www.glassto.github.io/welovepacks/products.html",
-    cancelUrl: "https://www.glassto.github.io/welovepacks/products.html",
+    successUrl: "https://glassto.github.io/welovepacks/products.html",
+    cancelUrl: "https://glassto.github.io/welovepacks/products.html",
   });
 }
 
