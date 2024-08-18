@@ -2,7 +2,7 @@ var stripe = Stripe("pk_test_51PgNVqRt0dowyNS878vrcvajElZ6OItdFHWCsr6h0KUymChtQp
 
 function buyItem() {
   stripe.redirectToCheckout({
-    lineItems: [cartToStripe],
+    lineItems: cartToStripe,
 
     mode: "payment",
     shippingAddressCollection: {
@@ -135,12 +135,14 @@ function displayProducts() {
   }
 }
 
+let cartWithQuantity = [];
 let cartToStripe = [];
 function cartToBuy(numberOfProducts) {
   let quantityToAdd = { quantity: 1 };
   let cartToBuy = { price: `${shoppingCart[numberOfProducts].price}` };
-  cartToStripe = { ...cartToStripe, ...cartToBuy, ...quantityToAdd };
-  console.log(cartToStripe);
+
+  cartWithQuantity = { ...cartWithQuantity, ...cartToBuy, ...quantityToAdd };
+  cartToStripe.push(cartWithQuantity);
 }
 
 let shoppingCart = [];
@@ -192,10 +194,10 @@ function removeFromCart(index) {
   let cartButtons = document.getElementById("cartButtons");
   let cartEmptyMessage = document.getElementById("cartEmptyMessage");
 
-  console.log(index);
   if (index >= 0 && index < shoppingCart.length) {
     let item = shoppingCart[index];
-    shoppingCart.splice(index, 1); // Elimină produsul din coș
+    shoppingCart.splice(index, 1);
+    cartToStripe.splice(index, 1); // Elimină produsul din coș
     cartPrice -= Number(item.cost);
     totalSum = cartPrice + deliveryFee;
     updateCart();
