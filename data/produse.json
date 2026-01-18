@@ -10,6 +10,15 @@
     "price": "price_1Pp9qjRt0dowyNS86CPtnblF"
   },
   {
+    "image": "img/images/products/sacosa-hartie-cu-maner.png",
+    "category": "Alte Produse",
+    "title": "Sacoșă hârtie fără mâner",
+    "specification1": "Dimensiune: 28/29/17 cm",
+    "specification2": "",
+    "cost": 0.30,
+    "per": "buc",
+  },
+  {
     "image": "img/images/products/manusi-negre-nitril.png",
     "category": "Alte Produse",
     "title": "Mănuși negre nitril",
@@ -695,4 +704,5 @@
     "cost": 40,
     "per": "50 buc"
   }
+
 ]
